@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="light" lang="sw"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>ZEC - Ramani ya Vituo</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#626262",
+                    "on-primary-fixed-variant": "#474746",
+                    "tertiary-fixed": "#e6e2df",
+                    "surface-dim": "#ddd9d8",
+                    "on-background": "#1c1b1b",
+                    "surface-container-low": "#f7f3f2",
+                    "secondary-container": "#e1dfdf",
+                    "outline": "#747878",
+                    "background": "#fdf8f8",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#484645",
+                    "inverse-primary": "#c8c6c5",
+                    "on-tertiary-fixed": "#1c1b1a",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "surface-container-high": "#ebe7e6",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#cac6c4",
+                    "inverse-on-surface": "#f4f0ef",
+                    "on-tertiary-container": "#868382",
+                    "on-primary-container": "#858383",
+                    "on-surface-variant": "#444748",
+                    "tertiary": "#000000",
+                    "surface": "#fdf8f8",
+                    "on-error-container": "#93000a",
+                    "outline-variant": "#c4c7c7",
+                    "surface-tint": "#5f5e5e",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed-dim": "#c7c6c6",
+                    "surface-variant": "#e5e2e1",
+                    "on-secondary-fixed-variant": "#464747",
+                    "primary-container": "#1c1b1b",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#e5e2e1",
+                    "primary": "#000000",
+                    "surface-container": "#f1edec",
+                    "tertiary-container": "#1c1b1a",
+                    "primary-fixed": "#e5e2e1",
+                    "on-primary-fixed": "#1c1b1b",
+                    "secondary": "#5e5e5e",
+                    "secondary-fixed": "#e4e2e2",
+                    "on-primary": "#ffffff",
+                    "on-surface": "#1c1b1b",
+                    "inverse-surface": "#313030",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "surface-bright": "#fdf8f8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "8px",
+                    "gutter": "16px",
+                    "margin-tablet": "32px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "base": "4px",
+                    "xl": "32px",
+                    "lg": "24px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "label-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg-mobile": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "display-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; background: #f7f3ef; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .map-shell {
+            height: calc(100dvh - 152px);
+            min-height: 0;
+        }
+        .glass-header {
+            background: rgba(253, 248, 248, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .custom-shadow {
+            box-shadow: 0px 18px 42px rgba(0, 0, 0, 0.16);
+        }
+        .map-overlay {
+            background: linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.2) 32%, rgba(0,0,0,0.22) 100%);
+        }
+        .bottom-sheet-anim {
+            animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-[#f7f3ef] text-on-surface overflow-hidden">
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile py-sm glass-header border-b border-outline-variant">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="account_balance">account_balance</span>
+<h1 class="text-headline-sm-mobile font-headline-sm-mobile font-bold text-primary">ZEC App</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="relative map-shell w-full overflow-hidden pt-[72px] pb-[96px]">
+<div class="absolute inset-0 bg-cover bg-center grayscale-[18%] opacity-95" data-alt="A detailed map view of Zanzibar city with roads and landmarks" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD5Mq9yIVwiGqqNaL379GV30RB9eRS3uplHwAXph5IeDPjawFP36dEioo8D6T9PytGUDf5yBfj0QiWvZfBe34i8ACgb9Q7TyBNfCgvJxvA_bB9ewHTdlxpsqEP8VkpxhXbGHciQYimscB0SHILvP0HUk2iZifqDnBsq73vxrMFnUD056T73mF9huzEfCmNjrsjQ_zgeQRy9f4N2iX610vToeyhzvvU9PT4mnbLc8JYoXPyblGepTNFQfPfu5XjUhGiSjxR3F02CcUE7')"></div>
+<div class="absolute inset-0 map-overlay"></div>
+<div class="absolute inset-x-0 top-3 z-20 px-margin-mobile">
+<div class="rounded-[28px] border border-white/70 bg-white/90 p-4 custom-shadow backdrop-blur-xl">
+<div class="flex items-start justify-between gap-3">
+<div>
+<p class="text-[11px] font-semibold uppercase tracking-[0.3em] text-secondary">RAMANI</p>
+<h2 class="mt-1 text-[24px] leading-[30px] font-bold text-primary">YA VITUO VYA KUPIGIA KURA</h2>
+<p class="mt-2 text-sm text-on-surface-variant">Pata kituo chako kwa urahisi, uone umbali na njia ya kufika.</p>
+</div>
+<div class="rounded-2xl bg-primary px-3 py-2 text-center text-[12px] font-semibold uppercase tracking-[0.2em] text-on-primary">Smart Map</div>
+</div>
+<div class="mt-3 flex items-center gap-2 rounded-2xl border border-outline-variant bg-surface-container-lowest p-2 shadow-sm">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+<input class="w-full border-none bg-transparent text-sm text-on-surface placeholder-on-surface-variant focus:ring-0" placeholder="Tafuta kituo chako..." type="text"/>
+<button class="rounded-xl bg-primary px-3 py-2 text-sm font-semibold text-on-primary">Chuja</button>
+</div>
+</div>
+</div>
+<div class="absolute inset-0 pointer-events-none">
+<div class="absolute left-[45%] top-[58%] flex flex-col items-center">
+<div class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-surface bg-primary text-on-primary shadow-lg">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div class="mt-1 h-1.5 w-1.5 rounded-full bg-primary"></div>
+</div>
+<div class="absolute left-[24%] top-[40%] opacity-70">
+<span class="material-symbols-outlined text-secondary text-[28px]" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div class="absolute left-[70%] top-[66%] opacity-70">
+<span class="material-symbols-outlined text-secondary text-[28px]" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+<div class="absolute inset-x-0 bottom-0 z-20 px-margin-mobile pb-4">
+<div class="bottom-sheet-anim rounded-[28px] border border-outline-variant bg-surface-container-lowest/95 p-4 custom-shadow backdrop-blur-xl">
+<div class="flex items-start justify-between gap-3">
+<div>
+<h3 class="font-semibold text-primary">Kituo cha Skuli ya Kidutani</h3>
+<p class="mt-1 text-sm text-on-surface-variant">Kidutani Road, Stone Town, Zanzibar</p>
+</div>
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">push_pin</span>
+</div>
+<div class="mt-3 grid grid-cols-3 gap-2 border-t border-outline-variant pt-3">
+<div class="flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-on-secondary-container">distance</span>
+<span class="mt-1 text-xs text-on-surface-variant">1.2km</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-on-secondary-container">directions_walk</span>
+<span class="mt-1 text-xs text-on-surface-variant">Dakika 15</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-on-secondary-container">schedule</span>
+<span class="mt-1 text-xs text-on-surface-variant">08:00 - 17:00</span>
+</div>
+</div>
+<button class="mt-3 flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-2.5 text-sm font-semibold text-on-primary">
+<span class="material-symbols-outlined">directions</span>
+Pata Njia
+</button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (from JSON blueprint) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-xs py-base pb-safe bg-surface border-t border-outline-variant shadow-sm h-[80px]">
+<!-- Nyumbani -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container transition-colors" href="../nyumbani_home_dashboard/code.html">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Nyumbani</span>
+</a>
+<!-- Elimu -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container transition-colors" href="../elimu_voter_education/code.html">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+<span class="font-label-sm text-label-sm">Elimu</span>
+</a>
+<!-- Vituo (ACTIVE) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-3 py-1 scale-95 transition-transform duration-100" href="../ramani_ya_vituo_polling_stations_refined_search/code.html">
+<span class="material-symbols-outlined" data-icon="location_on" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span class="font-label-sm text-label-sm">Vituo</span>
+</a>
+<!-- Mawasiliano -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container transition-colors" href="../mawasiliano_refined_home_button_transition/code.html">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span class="font-label-sm text-label-sm">Mawasiliano</span>
+</a>
+<!-- Zaidi -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container transition-colors" href="../zaidi_more_menu/code.html">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+<span class="font-label-sm text-label-sm">Zaidi</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interactions for map engagement
+        document.addEventListener('DOMContentLoaded', () => {
+            const chips = document.querySelectorAll('button[class*="flex-shrink-0"]');
+            chips.forEach(chip => {
+                chip.addEventListener('click', () => {
+                    chips.forEach(c => {
+                        c.classList.remove('bg-primary', 'text-on-primary');
+                        c.classList.add('bg-surface-container-highest', 'text-on-surface-variant');
+                    });
+                    chip.classList.remove('bg-surface-container-highest', 'text-on-surface-variant');
+                    chip.classList.add('bg-primary', 'text-on-primary');
+                });
+            });
+        });
+    </script>
+<a href="../msaidizi_zec_bot_assistant/code.html" class="fixed bottom-24 right-4 z-40 flex items-center gap-2 rounded-full bg-primary px-4 py-3 text-on-primary shadow-lg transition-transform active:scale-90">
+    <span class="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
+        <span class="material-symbols-outlined text-[20px]">smart_toy</span>
+    </span>
+    <span class="text-sm font-semibold">ZEC Bot</span>
+</a>
+</body></html>

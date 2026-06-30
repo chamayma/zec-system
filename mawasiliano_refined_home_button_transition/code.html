@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="light" lang="sw" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ZEC Mawasiliano - Zanzibar Electoral Commission</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#1b1c1c",
+                    "on-primary": "#ffffff",
+                    "on-surface": "#1c1b1b",
+                    "inverse-surface": "#313030",
+                    "surface-bright": "#fdf8f8",
+                    "secondary": "#5e5e5e",
+                    "tertiary-container": "#1c1b1a",
+                    "surface-container": "#f1edec",
+                    "primary-fixed": "#e5e2e1",
+                    "on-primary-fixed": "#1c1b1b",
+                    "secondary-fixed": "#e4e2e2",
+                    "on-secondary-fixed-variant": "#464747",
+                    "primary-container": "#1c1b1b",
+                    "primary": "#000000",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#e5e2e1",
+                    "surface-tint": "#5f5e5e",
+                    "outline-variant": "#c4c7c7",
+                    "surface-variant": "#e5e2e1",
+                    "secondary-fixed-dim": "#c7c6c6",
+                    "on-secondary": "#ffffff",
+                    "on-surface-variant": "#444748",
+                    "tertiary": "#000000",
+                    "tertiary-fixed-dim": "#cac6c4",
+                    "inverse-on-surface": "#f4f0ef",
+                    "on-tertiary-container": "#868382",
+                    "on-primary-container": "#858383",
+                    "surface": "#fdf8f8",
+                    "on-error-container": "#93000a",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "on-tertiary-fixed": "#1c1b1a",
+                    "inverse-primary": "#c8c6c5",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#ebe7e6",
+                    "secondary-container": "#e1dfdf",
+                    "outline": "#747878",
+                    "background": "#fdf8f8",
+                    "surface-container-low": "#f7f3f2",
+                    "on-background": "#1c1b1b",
+                    "on-tertiary-fixed-variant": "#484645",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#626262",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#e6e2df",
+                    "on-primary-fixed-variant": "#474746",
+                    "surface-dim": "#ddd9d8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "margin-tablet": "32px",
+                    "gutter": "16px",
+                    "md": "16px",
+                    "sm": "8px",
+                    "lg": "24px",
+                    "margin-mobile": "16px",
+                    "xl": "32px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "display-lg-mobile": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-lg": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+                    "display-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .card-shadow {
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .active-shadow {
+            box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12);
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdf8f8;
+        }
+
+        /* Success Animation Keyframes */
+        @keyframes checkmark-draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.4);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(22, 163, 74, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
+            }
+        }
+        .animate-checkmark {
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            animation: checkmark-draw 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards 0.2s;
+        }
+        .animate-success-pulse {
+            animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline docked full-width top-0 z-50 flex justify-between items-center w-full px-margin-mobile md:px-margin-tablet h-14">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary" data-icon="account_balance">account_balance</span>
+<h1 class="font-headline-sm text-headline-sm-mobile md:text-headline-sm text-primary dark:text-inverse-primary">Mawasiliano</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-surface-variant/50 transition-colors duration-200">
+<span class="material-symbols-outlined text-secondary dark:text-secondary-fixed-dim" data-icon="translate">translate</span>
+</button>
+</div>
+</header>
+<main class="flex-grow pb-24 px-margin-mobile md:px-margin-tablet">
+<!-- Header Visual / Decorative -->
+<section class="mt-lg mb-xl relative overflow-hidden rounded-xl h-48 flex items-end p-md border border-outline-variant">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A cinematic, high-contrast black and white photograph of the Zanzibar Electoral Commission main building in Stone Town, Zanzibar. The lighting is bright and airy, reflecting a professional and transparent government aesthetic. The composition is minimalist with wide negative space and sharp architectural lines. The image evokes authority and civic duty with a modern corporate feel." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBpY7yWCT9178-DPMs9WbVQ-teap9O1onqZ_psaPa7ildOr-ga4TkSY7jobyFcNEcb3ARg_n6zG5R9iDW7tKenKmwQ2vO2Rhp4i0FJhYBW7X_HhTSSSPoOAm6W_6rUMqsLkus14QOwUMT3X-T3a2NRNY_wDLhAM4Z2P9HRVSQq9yWDUtzl1ydCm1s6kf53goK-ycRfTVe1ZpISO77gJ87joLvJPAm0c2VByfK4e7kcYN-vO6c2YKlr5Pkv_r9KnboXqAS-TApIuBYXN')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+</div>
+<div class="relative z-10">
+<h2 class="text-on-primary font-display-lg-mobile text-display-lg-mobile">Tupo kwa ajili yako</h2>
+<p class="text-on-primary/80 font-body-md text-body-md">Wasiliana na Tume ya Uchaguzi Zanzibar kwa msaada zaidi.</p>
+</div>
+</section>
+<!-- Quick Actions -->
+<section class="grid grid-cols-2 gap-gutter mb-xl">
+<a class="bg-surface-container card-shadow rounded-lg p-md flex flex-col items-center justify-center text-center gap-sm active:scale-95 transition-transform border border-outline-variant hover:border-primary transition-all" href="tel:+255242232323">
+<div class="bg-primary p-sm rounded-full text-white">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+</div>
+<span class="font-label-lg text-label-lg">Piga Simu</span>
+</a>
+<a class="bg-surface-container card-shadow rounded-lg p-md flex flex-col items-center justify-center text-center gap-sm active:scale-95 transition-transform border border-outline-variant hover:border-primary transition-all" href="mailto:info@zec.go.tz">
+<div class="bg-primary p-sm rounded-full text-white">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</div>
+<span class="font-label-lg text-label-lg">Tuma Barua</span>
+</a>
+</section>
+<!-- Office Cards -->
+<section class="space-y-gutter mb-xl">
+<h3 class="font-headline-sm text-headline-sm mb-md">Ofisi Zetu</h3>
+<!-- HQ Card -->
+<div class="bg-white border border-outline-variant rounded-lg p-md card-shadow">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h4 class="font-label-lg text-label-lg text-primary font-bold tracking-tight">Makao Makuu ya ZEC</h4>
+<p class="font-body-md text-body-md text-secondary">Maisara, Zanzibar</p>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed px-sm py-xs rounded text-[10px] font-bold uppercase tracking-tight">HQ</span>
+</div>
+<div class="space-y-sm mb-lg">
+<div class="flex items-center gap-sm text-secondary">
+<span class="material-symbols-outlined text-[18px]" data-icon="phone_in_talk">phone_in_talk</span>
+<span class="font-body-md text-body-md">+255 24 223 2323</span>
+</div>
+<div class="flex items-center gap-sm text-secondary">
+<span class="material-symbols-outlined text-[18px]" data-icon="alternate_email">alternate_email</span>
+<span class="font-body-md text-body-md">info@zec.go.tz</span>
+</div>
+</div>
+<button class="w-full h-[48px] border border-primary text-primary font-label-lg text-label-lg rounded-lg flex items-center justify-center gap-sm hover:bg-primary-fixed/20 transition-colors bg-surface-container-low">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+                    Angalia Ramani
+                </button>
+</div>
+<!-- Pemba Office -->
+<div class="bg-white border border-outline-variant rounded-lg p-md card-shadow">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h4 class="font-label-lg text-label-lg text-primary font-bold tracking-tight">Ofisi Kuu Pemba</h4>
+<p class="font-body-md text-body-md text-secondary">Chake Chake, Pemba</p>
+</div>
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-sm py-xs rounded text-[10px] font-bold uppercase tracking-tight">PEMBA</span>
+</div>
+<div class="space-y-sm mb-lg">
+<div class="flex items-center gap-sm text-secondary">
+<span class="material-symbols-outlined text-[18px]" data-icon="phone_in_talk">phone_in_talk</span>
+<span class="font-body-md text-body-md">+255 24 245 2045</span>
+</div>
+</div>
+<button class="w-full h-[48px] border border-primary text-primary font-label-lg text-label-lg rounded-lg flex items-center justify-center gap-sm hover:bg-primary-fixed/20 transition-colors bg-surface-container-low">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+                    Angalia Ramani
+                </button>
+</div><div class="bg-white border border-outline-variant rounded-lg p-md card-shadow"><div class="flex justify-between items-start mb-sm"><div><h4 class="font-label-lg text-label-lg text-primary font-bold tracking-tight">Unguja Kusini</h4><p class="font-body-md text-body-md text-secondary">Tunguu, Central District, Zanzibar</p></div><span class="bg-secondary-fixed text-on-secondary-fixed-variant px-sm py-xs rounded text-[10px] font-bold uppercase tracking-tight">BRANCH</span></div><div class="space-y-sm mb-lg"><div class="flex items-center gap-sm text-secondary"><span class="material-symbols-outlined text-[18px]" data-icon="phone_in_talk">phone_in_talk</span><span class="font-body-md text-body-md">+255 24 223 4000</span></div></div><button class="w-full h-[48px] border border-primary text-primary font-label-lg text-label-lg rounded-lg flex items-center justify-center gap-sm hover:bg-primary-fixed/20 transition-colors bg-surface-container-low"><span class="material-symbols-outlined" data-icon="location_on">location_on</span>Angalia Ramani</button></div><div class="bg-white border border-outline-variant rounded-lg p-md card-shadow"><div class="flex justify-between items-start mb-sm"><div><h4 class="font-label-lg text-label-lg text-primary font-bold tracking-tight">Unguja Kaskazini</h4><p class="font-body-md text-body-md text-secondary">Mahonda, North District, Zanzibar</p></div><span class="bg-secondary-fixed text-on-secondary-fixed-variant px-sm py-xs rounded text-[10px] font-bold uppercase tracking-tight">BRANCH</span></div><div class="space-y-sm mb-lg"><div class="flex items-center gap-sm text-secondary"><span class="material-symbols-outlined text-[18px]" data-icon="phone_in_talk">phone_in_talk</span><span class="font-body-md text-body-md">+255 24 223 5000</span></div></div><button class="w-full h-[48px] border border-primary text-primary font-label-lg text-label-lg rounded-lg flex items-center justify-center gap-sm hover:bg-primary-fixed/20 transition-colors bg-surface-container-low"><span class="material-symbols-outlined" data-icon="location_on">location_on</span>Angalia Ramani</button></div><div class="bg-white border border-outline-variant rounded-lg p-md card-shadow"><div class="flex justify-between items-start mb-sm"><div><h4 class="font-label-lg text-label-lg text-primary font-bold tracking-tight">Kaskazini B</h4><p class="font-body-md text-body-md text-secondary">Mahonda, North B District, Zanzibar</p></div><span class="bg-secondary-fixed text-on-secondary-fixed-variant px-sm py-xs rounded text-[10px] font-bold uppercase tracking-tight">BRANCH</span></div><div class="space-y-sm mb-lg"><div class="flex items-center gap-sm text-secondary"><span class="material-symbols-outlined text-[18px]" data-icon="phone_in_talk">phone_in_talk</span><span class="font-body-md text-body-md">+255 24 223 6000</span></div></div><button class="w-full h-[48px] border border-primary text-primary font-label-lg text-label-lg rounded-lg flex items-center justify-center gap-sm hover:bg-primary-fixed/20 transition-colors bg-surface-container-low"><span class="material-symbols-outlined" data-icon="location_on">location_on</span>Angalia Ramani</button></div><div class="bg-white border border-outline-variant rounded-lg p-md card-shadow"><div class="flex justify-between items-start mb-sm"><div><h4 class="font-label-lg text-label-lg text-primary font-bold tracking-tight">Ofisi ya Pemba</h4><p class="font-body-md text-body-md text-secondary">Chake Chake, Pemba</p></div><span class="bg-secondary-fixed text-on-secondary-fixed-variant px-sm py-xs rounded text-[10px] font-bold uppercase tracking-tight">PEMBA</span></div><div class="space-y-sm mb-lg"><div class="flex items-center gap-sm text-secondary"><span class="material-symbols-outlined text-[18px]" data-icon="phone_in_talk">phone_in_talk</span><span class="font-body-md text-body-md">+255 24 245 2045</span></div></div><button class="w-full h-[48px] border border-primary text-primary font-label-lg text-label-lg rounded-lg flex items-center justify-center gap-sm hover:bg-primary-fixed/20 transition-colors bg-surface-container-low"><span class="material-symbols-outlined" data-icon="location_on">location_on</span>Angalia Ramani</button></div><div class="bg-white border border-outline-variant rounded-lg p-md card-shadow"><div class="flex justify-between items-start mb-sm"><div><h4 class="font-label-lg text-label-lg text-primary font-bold tracking-tight">Unguja Magharibi</h4><p class="font-body-md text-body-md text-secondary">Dimani, West District, Zanzibar</p></div><span class="bg-secondary-fixed text-on-secondary-fixed-variant px-sm py-xs rounded text-[10px] font-bold uppercase tracking-tight">BRANCH</span></div><div class="space-y-sm mb-lg"><div class="flex items-center gap-sm text-secondary"><span class="material-symbols-outlined text-[18px]" data-icon="phone_in_talk">phone_in_talk</span><span class="font-body-md text-body-md">+255 24 223 6000</span></div></div><button class="w-full h-[48px] border border-primary text-primary font-label-lg text-label-lg rounded-lg flex items-center justify-center gap-sm hover:bg-primary-fixed/20 transition-colors bg-surface-container-low"><span class="material-symbols-outlined" data-icon="location_on">location_on</span>Angalia Ramani</button></div><div class="bg-white border border-outline-variant rounded-lg p-md card-shadow"><div class="flex justify-between items-start mb-sm"><div><h4 class="font-label-lg text-label-lg text-primary font-bold tracking-tight">Unguja Mjini</h4><p class="font-body-md text-body-md text-secondary">Malindi, Stonetown, Zanzibar</p></div><span class="bg-secondary-fixed text-on-secondary-fixed-variant px-sm py-xs rounded text-[10px] font-bold uppercase tracking-tight">BRANCH</span></div><div class="space-y-sm mb-lg"><div class="flex items-center gap-sm text-secondary"><span class="material-symbols-outlined text-[18px]" data-icon="phone_in_talk">phone_in_talk</span><span class="font-body-md text-body-md">+255 24 223 7000</span></div></div><button class="w-full h-[48px] border border-primary text-primary font-label-lg text-label-lg rounded-lg flex items-center justify-center gap-sm hover:bg-primary-fixed/20 transition-colors bg-surface-container-low"><span class="material-symbols-outlined" data-icon="location_on">location_on</span>Angalia Ramani</button></div>
+</section>
+<!-- Inquiry Form (Success State) -->
+<section class="bg-surface-container-low rounded-xl p-xl border border-outline-variant mb-xl card-shadow flex flex-col items-center text-center animate-in fade-in duration-500">
+<div class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-lg animate-success-pulse">
+<!-- SVG for custom path animation -->
+<svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" stroke-width="3" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path class="animate-checkmark" d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-sm text-on-surface">Ujumbe Umepokelewa</h3>
+<p class="font-body-md text-body-md text-secondary mb-xl max-w-[280px]">Asante kwa kuwasiliana nasi. Tutakujibu hivi karibuni kupitia barua pepe yako.</p>
+<div class="flex flex-col w-full gap-sm">
+<button class="w-full bg-primary text-white rounded-lg font-label-lg text-label-lg h-14 uppercase active:scale-95 transition-transform" onclick="window.location.reload()">
+      Tuma Ujumbe Mwingine
+    </button>
+<a class="w-full border border-outline text-primary rounded-lg font-label-lg text-label-lg h-14 flex items-center justify-center uppercase hover:bg-surface-variant/40 active:scale-95 active:bg-surface-variant/60 transition-all duration-200" href="../nyumbani_home_dashboard/code.html">
+      Rudi Nyumbani
+    </a>
+</div>
+</section>
+<!-- Social Media -->
+<section class="text-center mb-xl">
+<h4 class="font-label-lg text-label-lg text-secondary mb-md uppercase tracking-widest">Tufuate Kwenye Mitandao</h4>
+<div class="flex justify-center gap-lg mt-md">
+<a class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center text-primary hover:bg-primary-container hover:text-white transition-all" href="../habari_na_vyombo_vya_habari_news_media/code.html">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+</a>
+<a class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center text-primary hover:bg-primary-container hover:text-white transition-all" href="../habari_na_vyombo_vya_habari_news_media/code.html">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.324v-21.35c0-.732-.593-1.325-1.323-1.325z"></path></svg>
+</a>
+<a class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center text-primary hover:bg-primary-container hover:text-white transition-all" href="../habari_na_vyombo_vya_habari_news_media/code.html">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+</div>
+<p class="mt-lg font-label-sm text-label-sm text-secondary">© 2024 Zanzibar Electoral Commission. Haki zote zimehifadhiwa.</p>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center py-2 pb-safe bg-surface dark:bg-inverse-surface border-t border-outline-variant dark:border-outline z-50 shadow-sm">
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 px-4 py-1 rounded-xl hover:bg-surface-container hover:text-primary dark:hover:bg-surface-container-high dark:hover:text-primary-fixed-dim transition-all duration-200 active:scale-90" href="../nyumbani_home_dashboard/code.html">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Nyumbani</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 px-4 py-1 rounded-xl hover:bg-surface-container hover:text-primary dark:hover:bg-surface-container-high dark:hover:text-primary-fixed-dim transition-all duration-200 active:scale-90" href="../elimu_voter_education/code.html">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+<span class="font-label-sm text-label-sm">Elimu</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 px-4 py-1 rounded-xl hover:bg-surface-container hover:text-primary dark:hover:bg-surface-container-high dark:hover:text-primary-fixed-dim transition-all duration-200 active:scale-90" href="../ramani_ya_vituo_polling_stations_refined_search/code.html">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+<span class="font-label-sm text-label-sm">Vituo</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-fixed text-on-primary-container dark:text-on-primary-fixed rounded-full px-4 py-1 shadow-sm transition-all duration-200 active:scale-90" href="../mawasiliano_refined_home_button_transition/code.html">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-sm text-label-sm">Mawasiliano</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 px-4 py-1 rounded-xl hover:bg-surface-container hover:text-primary dark:hover:bg-surface-container-high dark:hover:text-primary-fixed-dim transition-all duration-200 active:scale-90" href="../zaidi_more_menu/code.html">
+<span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span>
+<span class="font-label-sm text-label-sm">Zaidi</span>
+</a>
+</nav>
+<script>
+        // Subtle parallax to the header image
+        window.addEventListener('scroll', () => {
+            const scroll = window.pageYOffset;
+            const heroImage = document.querySelector('[data-alt^="A cinematic"]');
+            if(heroImage) {
+                heroImage.style.transform = `translateY(${scroll * 0.15}px)`;
+            }
+        });
+    </script>
+<a href="../msaidizi_zec_bot_assistant/code.html" class="fixed bottom-24 right-4 z-40 flex items-center gap-2 rounded-full bg-primary px-4 py-3 text-on-primary shadow-lg transition-transform active:scale-90">
+    <span class="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
+        <span class="material-symbols-outlined text-[20px]">smart_toy</span>
+    </span>
+    <span class="text-sm font-semibold">ZEC Bot</span>
+</a>
+</body></html>

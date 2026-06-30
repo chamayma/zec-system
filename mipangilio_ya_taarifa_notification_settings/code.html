@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="light" lang="sw"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>ZEC App - Mipangilio ya Taarifa</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#444748",
+                    "on-background": "#1c1b1b",
+                    "outline-variant": "#c4c7c7",
+                    "surface-dim": "#ddd9d8",
+                    "primary": "#000000",
+                    "error-container": "#ffdad6",
+                    "background": "#fdf8f8",
+                    "tertiary-fixed": "#e6e2df",
+                    "surface-container-low": "#f7f3f2",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "on-secondary-container": "#626262",
+                    "surface-variant": "#e5e2e1",
+                    "surface-container": "#f1edec",
+                    "surface-bright": "#fdf8f8",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#747878",
+                    "tertiary-container": "#1c1b1a",
+                    "secondary": "#5e5e5e",
+                    "secondary-fixed-dim": "#c7c6c6",
+                    "on-error": "#ffffff",
+                    "surface-container-highest": "#e5e2e1",
+                    "tertiary-fixed-dim": "#cac6c4",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-primary-container": "#858383",
+                    "on-primary-fixed-variant": "#474746",
+                    "inverse-on-surface": "#f4f0ef",
+                    "surface": "#fdf8f8",
+                    "secondary-container": "#e1dfdf",
+                    "primary-container": "#1c1b1b",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#c8c6c5",
+                    "on-secondary-fixed-variant": "#464747",
+                    "inverse-surface": "#313030",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#ebe7e6",
+                    "surface-tint": "#5f5e5e",
+                    "on-tertiary-container": "#868382",
+                    "on-tertiary-fixed-variant": "#484645",
+                    "on-secondary": "#ffffff",
+                    "on-surface": "#1c1b1b",
+                    "tertiary": "#000000",
+                    "secondary-fixed": "#e4e2e2",
+                    "primary-fixed": "#e5e2e1",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed": "#1c1b1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "md": "16px",
+                    "base": "4px",
+                    "xs": "4px",
+                    "margin-mobile": "16px",
+                    "lg": "24px",
+                    "margin-tablet": "32px",
+                    "xl": "32px",
+                    "sm": "8px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "display-lg-mobile": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "label-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        /* Custom Toggle Switch Styles */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #000000;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #000000;
+        }
+        .custom-shadow {
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile py-sm bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="text-headline-sm-mobile font-headline-sm-mobile font-bold text-primary">Mipangilio ya Taarifa</h1>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-primary" data-icon="notifications">notifications</span>
+</div>
+</header>
+<main class="pt-20 px-margin-mobile max-w-2xl mx-auto space-y-6">
+<!-- Main Toggle Card -->
+<section class="bg-surface-container-lowest custom-shadow rounded-xl p-md border border-outline-variant/30">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="bg-primary-container p-3 rounded-full">
+<span class="material-symbols-outlined text-on-primary" data-icon="notifications_active">notifications_active</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Ruhusu Taarifa</h2>
+<p class="text-label-sm text-secondary">Pokea sasisho zote muhimu za ZEC</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-12 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</section>
+<!-- Election Updates Section -->
+<section class="space-y-3">
+<h3 class="font-label-lg text-label-lg text-secondary px-base">Taarifa za Uchaguzi</h3>
+<div class="bg-surface-container-lowest custom-shadow rounded-xl overflow-hidden border border-outline-variant/30">
+<!-- Toggle Row 1 -->
+<div class="flex items-center justify-between p-md border-b border-outline-variant/20">
+<div class="flex flex-col">
+<span class="font-body-lg text-body-lg text-on-background">Matokeo</span>
+<span class="text-label-sm text-secondary">Matokeo ya uchaguzi kwa wakati</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Toggle Row 2 -->
+<div class="flex items-center justify-between p-md border-b border-outline-variant/20">
+<div class="flex flex-col">
+<span class="font-body-lg text-body-lg text-on-background">Ratiba za Uchaguzi</span>
+<span class="text-label-sm text-secondary">Tarehe muhimu na mabadiliko ya ratiba</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Toggle Row 3 -->
+<div class="flex items-center justify-between p-md">
+<div class="flex flex-col">
+<span class="font-body-lg text-body-lg text-on-background">Taarifa Muhimu</span>
+<span class="text-label-sm text-secondary">Tahadhari na matangazo ya dharura</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Registration & Verification -->
+<section class="space-y-3">
+<h3 class="font-label-lg text-label-lg text-secondary px-base">Uandikishaji na Uhakiki</h3>
+<div class="bg-surface-container-lowest custom-shadow rounded-xl overflow-hidden border border-outline-variant/30">
+<div class="flex items-center justify-between p-md border-b border-outline-variant/20">
+<div class="flex flex-col">
+<span class="font-body-lg text-body-lg text-on-background">Kikumbusho cha Uhakiki</span>
+<span class="text-label-sm text-secondary">Kumbukumbu za kuhakiki taarifa zako</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between p-md">
+<div class="flex flex-col">
+<span class="font-body-lg text-body-lg text-on-background">Taarifa za Vituo</span>
+<span class="text-label-sm text-secondary">Mabadiliko ya maeneo ya vituo</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Voter Education -->
+<section class="space-y-3">
+<h3 class="font-label-lg text-label-lg text-secondary px-base">Elimu ya Mpiga Kura</h3>
+<div class="bg-surface-container-lowest custom-shadow rounded-xl overflow-hidden border border-outline-variant/30">
+<div class="flex items-center justify-between p-md">
+<div class="flex flex-col">
+<span class="font-body-lg text-body-lg text-on-background">Video Mpya za Mafunzo</span>
+<span class="text-label-sm text-secondary">Mafunzo mapya kuhusu upigaji kura</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Notification Method -->
+<section class="space-y-3">
+<h3 class="font-label-lg text-label-lg text-secondary px-base">Njia ya Taarifa</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest custom-shadow rounded-xl p-md border border-outline-variant/30 flex flex-col items-center gap-2 cursor-pointer hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="app_shortcut">app_shortcut</span>
+<span class="font-label-lg text-label-lg">Push Notification</span>
+<input checked="" class="w-5 h-5 text-primary rounded border-outline-variant focus:ring-primary" type="checkbox"/>
+</div>
+<div class="bg-surface-container-lowest custom-shadow rounded-xl p-md border border-outline-variant/30 flex flex-col items-center gap-2 cursor-pointer hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="sms">sms</span>
+<span class="font-label-lg text-label-lg">SMS</span>
+<input class="w-5 h-5 text-primary rounded border-outline-variant focus:ring-primary" type="checkbox"/>
+</div>
+</div>
+</section>
+<!-- Illustration for aesthetics -->
+<div class="py-8 flex justify-center opacity-60">
+<div class="w-32 h-32 bg-secondary-container rounded-full flex items-center justify-center relative overflow-hidden" data-alt="A subtle minimalist digital illustration of a smartphone displaying a checkmark and a notification bell, rendered in soft grays and blacks on a clean white background to reflect a secure government app aesthetic. The lighting is soft and flat, emphasizing modern clean UI lines." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCH8pPXd8ca2xWLKazvO5wLIszwoYo2JPt4LktQzwXyTJrOTw2adh-5DFhc6gNNjmaUD1yCxwoNruWR1UnwDA2_b6czq2qbQ9B6n7e2o1u6ffXyj1ic4XjXGGg6VeLKUA1zKeGf_8YlyyHY43szxg1dlafg3KFG7DmjrH3V35VVrHi4jRD7Zlxhut7Eivv7Ity6zUmdVvvXwP-WTADjveb368VPhE7_x2Vsnw2seKB1qoL8kg9vXQEXdSFhbH81IP0XPwIKr1z3Ux0L')">
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-xs py-base pb-safe bg-surface border-t border-outline-variant shadow-sm">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container transition-colors" href="../nyumbani_home_dashboard/code.html">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Nyumbani</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container transition-colors" href="../elimu_voter_education/code.html">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+<span class="font-label-sm text-label-sm">Elimu</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container transition-colors" href="../ramani_ya_vituo_polling_stations_refined_search/code.html">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+<span class="font-label-sm text-label-sm">Vituo</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container transition-colors" href="../mawasiliano_refined_home_button_transition/code.html">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span class="font-label-sm text-label-sm">Mawasiliano</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-3 py-1 scale-95" href="../zaidi_more_menu/code.html">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+<span class="font-label-sm text-label-sm">Zaidi</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction: Smooth scrolling and active states
+        document.querySelectorAll('input[type="checkbox"]').forEach(toggle => {
+            toggle.addEventListener('change', function() {
+                // Haptic feedback simulation or state sync logic could go here
+                console.log(`${this.parentElement.previousElementSibling?.textContent || 'Notification'} status: ${this.checked}`);
+            });
+        });
+
+        // Handle the "Back" button
+        document.querySelector('header button').addEventListener('click', () => {
+            window.history.back();
+        });
+    </script>
+<a href="../msaidizi_zec_bot_assistant/code.html" class="fixed bottom-24 right-4 z-40 flex items-center gap-2 rounded-full bg-primary px-4 py-3 text-on-primary shadow-lg transition-transform active:scale-90">
+  <span class="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
+    <span class="material-symbols-outlined text-[20px]">smart_toy</span>
+  </span>
+  <span class="text-sm font-semibold">ZEC Bot</span>
+</a>
+</body></html>

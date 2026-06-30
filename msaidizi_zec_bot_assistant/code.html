@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="light" lang="sw"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ZEC Bot - Msaidizi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#ebe7e6",
+                        "outline": "#747878",
+                        "surface-variant": "#e5e2e1",
+                        "primary-container": "#1c1b1b",
+                        "tertiary-container": "#1c1b1a",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#484645",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "background": "#fdf8f8",
+                        "primary": "#000000",
+                        "on-secondary-fixed-variant": "#464747",
+                        "tertiary": "#000000",
+                        "inverse-primary": "#c8c6c5",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#5f5e5e",
+                        "on-secondary-container": "#626262",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c4c7c7",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#fdf8f8",
+                        "on-primary-container": "#858383",
+                        "inverse-on-surface": "#f4f0ef",
+                        "surface-dim": "#ddd9d8",
+                        "surface-container-low": "#f7f3f2",
+                        "on-tertiary-container": "#868382",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#e6e2df",
+                        "on-primary-fixed-variant": "#474746",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#e5e2e1",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "on-tertiary-fixed": "#1c1b1a",
+                        "tertiary-fixed-dim": "#cac6c4",
+                        "on-surface": "#1c1b1b",
+                        "secondary-fixed": "#e4e2e2",
+                        "surface": "#fdf8f8",
+                        "secondary-container": "#e1dfdf",
+                        "on-background": "#1c1b1b",
+                        "inverse-surface": "#313030",
+                        "secondary": "#5e5e5e",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#444748",
+                        "on-primary-fixed": "#1c1b1b",
+                        "surface-container": "#f1edec",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "margin-tablet": "32px",
+                        "xl": "32px",
+                        "margin-mobile": "16px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "gutter": "16px",
+                        "lg": "24px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .chat-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .chat-scroll::-webkit-scrollbar-thumb {
+            background: #e5e2e1;
+            border-radius: 10px;
+        }
+        .glass-header {
+            backdrop-filter: blur(8px);
+            background: rgba(253, 248, 248, 0.9);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 glass-header border-b border-outline-variant px-margin-mobile md:px-margin-tablet h-14 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<a href="../nyumbani_home_dashboard/code.html" aria-label="Back" class="p-2 -ml-2 rounded-full hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-on-surface">arrow_back</span>
+</a>
+<div class="flex flex-col">
+<h1 class="font-headline-sm text-headline-sm-mobile md:text-headline-sm text-on-surface leading-none">Msaidizi</h1>
+<span class="text-label-sm text-secondary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Yuko mtandaoni
+                </span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="Translate" class="p-2 rounded-full hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-secondary">translate</span>
+</button>
+<button aria-label="More Info" class="p-2 rounded-full hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-secondary">info</span>
+</button>
+</div>
+</header>
+<!-- Chat History -->
+<main class="flex-1 flex flex-col overflow-hidden">
+<div class="flex-1 overflow-y-auto chat-scroll p-margin-mobile space-y-lg">
+<!-- Date Indicator -->
+<div class="flex justify-center">
+<span class="px-3 py-1 bg-surface-container-low text-secondary text-label-sm rounded-full border border-outline-variant">Leo</span>
+</div>
+<!-- Bot Message -->
+<div class="flex gap-3 max-w-[85%] md:max-w-[70%] animate-in fade-in slide-in-from-left duration-500">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-on-primary text-[18px]">account_balance</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="bg-surface-container-high p-4 rounded-xl rounded-tl-none shadow-sm border border-outline-variant/30">
+<p class="text-body-md text-on-surface leading-relaxed">
+                            Habari! Mimi ni Msaidizi wako wa ZEC. Naweza kukusaidia kupata kituo chako cha kura, kuelezea jinsi ya kupiga kura, au kutoa taarifa za matokeo. Ungependa kuuliza nini?
+                        </p>
+</div>
+<span class="text-[10px] text-outline px-1">10:02 AM</span>
+</div>
+</div>
+<!-- User Message (Simulated) -->
+<div class="flex flex-row-reverse gap-3 max-w-[85%] md:max-w-[70%] ml-auto animate-in fade-in slide-in-from-right duration-500">
+<div class="flex flex-col items-end gap-1">
+<div class="bg-primary text-on-primary p-4 rounded-xl rounded-tr-none shadow-md">
+<p class="text-body-md leading-relaxed">Habari, nataka kujua vigezo vya mpiga kura.</p>
+</div>
+<span class="text-[10px] text-outline px-1">10:03 AM • Imesomwa</span>
+</div>
+</div>
+<!-- Bot Response (Simulated) -->
+<div class="flex gap-3 max-w-[85%] md:max-w-[70%] animate-in fade-in slide-in-from-left duration-500 delay-300">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-[18px]">account_balance</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="bg-surface-container-high p-4 rounded-xl rounded-tl-none shadow-sm border border-outline-variant/30">
+<p class="text-body-md text-on-surface leading-relaxed">
+                            Kwa mujibu wa taratibu za ZEC, vigezo vya mpiga kura Zanzibar ni:
+                        </p>
+<ul class="mt-2 space-y-2 text-body-md text-on-surface-variant list-disc pl-4">
+<li>Kuwa raia wa Tanzania mwenye asili ya Zanzibar.</li>
+<li>Kufikisha umri wa miaka 18 au zaidi.</li>
+<li>Kuwa mkazi wa eneo unalojiandikisha kwa angalau miezi 36.</li>
+<li>Kuwe na kitambulisho cha Mzanzibari Mkaazi (ZANID).</li>
+</ul>
+</div>
+<span class="text-[10px] text-outline px-1">10:03 AM</span>
+</div>
+</div>
+</div>
+<!-- Quick Action Suggestion Area -->
+<div class="px-margin-mobile pb-4 pt-2">
+<div class="flex overflow-x-auto no-scrollbar gap-2 pb-2">
+<button class="flex-none bg-surface-container-low hover:bg-surface-container-high border border-outline-variant text-on-surface px-4 py-2 rounded-full text-label-lg transition-all active:scale-95 whitespace-nowrap">
+<span class="material-symbols-outlined text-sm mr-1">location_on</span> Niko wapi?
+                </button>
+<button class="flex-none bg-surface-container-low hover:bg-surface-container-high border border-outline-variant text-on-surface px-4 py-2 rounded-full text-label-lg transition-all active:scale-95 whitespace-nowrap">
+<span class="material-symbols-outlined text-sm mr-1">how_to_vote</span> Jinsi ya kupiga kura
+                </button>
+<button class="flex-none bg-surface-container-low hover:bg-surface-container-high border border-outline-variant text-on-surface px-4 py-2 rounded-full text-label-lg transition-all active:scale-95 whitespace-nowrap">
+<span class="material-symbols-outlined text-sm mr-1">calendar_month</span> Ratiba ya Uchaguzi
+                </button>
+<button class="flex-none bg-surface-container-low hover:bg-surface-container-high border border-outline-variant text-on-surface px-4 py-2 rounded-full text-label-lg transition-all active:scale-95 whitespace-nowrap">
+<span class="material-symbols-outlined text-sm mr-1">badge</span> Vigezo vya Mpiga Kura
+                </button>
+</div>
+</div>
+<!-- Input Area -->
+<div class="bg-surface border-t border-outline-variant p-4 pb-safe-bottom">
+<div class="max-w-4xl mx-auto flex items-end gap-2 bg-surface-container-low border border-outline-variant rounded-3xl p-1.5 focus-within:ring-2 focus-within:ring-primary/20 transition-shadow">
+<button aria-label="Attach" class="p-2 text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">attach_file</span>
+</button>
+<textarea class="flex-1 bg-transparent border-none focus:ring-0 text-body-md py-2 px-1 max-h-32 resize-none text-on-surface" placeholder="Andika ujumbe wako..." rows="1"></textarea>
+<div class="flex items-center gap-1">
+<button aria-label="Voice Input" class="p-2 text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">mic</span>
+</button>
+<button aria-label="Send Message" class="bg-primary text-on-primary p-2 rounded-full flex items-center justify-center hover:opacity-90 active:scale-90 transition-all shadow-md">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+<p class="text-[10px] text-center text-outline mt-3">
+                ZEC Bot hutumia akili mnemba (AI) kutoa taarifa za kiserikali.
+            </p>
+</div>
+</main>
+<!-- Bottom Nav Suppression Logic: Hiding because this is a task-focused screen (Chat Assistant) -->
+<script>
+        // Micro-interactions for the input textarea height
+        const textarea = document.querySelector('textarea');
+        textarea.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        });
+
+        // Simple enter-to-send simulation
+        textarea.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                alert('Ujumbe wako umetumwa! (Hii ni mfano tu)');
+                textarea.value = '';
+                textarea.style.height = 'auto';
+            }
+        });
+
+        // Quick action chip interaction
+        document.querySelectorAll('button.flex-none').forEach(chip => {
+            chip.addEventListener('click', () => {
+                const text = chip.textContent.trim().replace(/^.+ /, '');
+                textarea.value = text;
+                textarea.focus();
+            });
+        });
+    </script>
+</body></html>

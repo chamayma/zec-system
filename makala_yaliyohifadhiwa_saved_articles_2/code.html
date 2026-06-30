@@ -1,0 +1,273 @@
+<!DOCTYPE html><html class="light" lang="sw"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>ZEC - Makala Yaliyohifadhiwa</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#484645",
+                        "on-error": "#ffffff",
+                        "background": "#fdf8f8",
+                        "secondary-container": "#e1dfdf",
+                        "outline": "#747878",
+                        "surface-container-low": "#f7f3f2",
+                        "on-background": "#1c1b1b",
+                        "surface-dim": "#ddd9d8",
+                        "tertiary-fixed": "#e6e2df",
+                        "on-primary-fixed-variant": "#474746",
+                        "on-secondary-container": "#626262",
+                        "error-container": "#ffdad6",
+                        "surface": "#fdf8f8",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#000000",
+                        "on-surface-variant": "#444748",
+                        "on-tertiary-container": "#868382",
+                        "on-primary-container": "#858383",
+                        "tertiary-fixed-dim": "#cac6c4",
+                        "inverse-on-surface": "#f4f0ef",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#ebe7e6",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-tertiary-fixed": "#1c1b1a",
+                        "inverse-primary": "#c8c6c5",
+                        "primary": "#000000",
+                        "surface-container-highest": "#e5e2e1",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "primary-container": "#1c1b1b",
+                        "on-secondary-fixed-variant": "#464747",
+                        "surface-variant": "#e5e2e1",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#5f5e5e",
+                        "outline-variant": "#c4c7c7",
+                        "surface-bright": "#fdf8f8",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "on-surface": "#1c1b1b",
+                        "inverse-surface": "#313030",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#e4e2e2",
+                        "secondary": "#5e5e5e",
+                        "primary-fixed": "#e5e2e1",
+                        "on-primary-fixed": "#1c1b1b",
+                        "tertiary-container": "#1c1b1a",
+                        "surface-container": "#f1edec"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "xs": "4px",
+                        "margin-tablet": "32px",
+                        "gutter": "16px",
+                        "sm": "8px",
+                        "margin-mobile": "16px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+                        "display-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            user-select: none;
+        }
+        .article-card {
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .article-card:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface border-b border-outline-variant flex justify-between items-center px-margin-mobile h-14">
+<button class="material-symbols-outlined text-primary hover:bg-surface-container-high p-2 rounded-full transition-colors active:opacity-70" data-icon="arrow_back">
+            arrow_back
+        </button>
+<h1 class="font-headline-sm-mobile text-headline-sm-mobile font-bold text-on-surface">Makala Yaliyohifadhiwa</h1>
+<button class="material-symbols-outlined text-primary hover:bg-surface-container-high p-2 rounded-full transition-colors active:opacity-70" data-icon="delete_sweep">
+            delete_sweep
+        </button>
+</header>
+<!-- Content Canvas -->
+<main class="pt-20 px-margin-mobile max-w-2xl mx-auto space-y-lg">
+<!-- Summary/Status Section -->
+<div class="flex items-center justify-between">
+<p class="text-label-lg font-label-lg text-on-surface-variant">Makala 4 zimehifadhiwa</p>
+<div class="flex items-center gap-xs text-primary">
+<span class="material-symbols-outlined text-[18px]" data-icon="sort">sort</span>
+<span class="text-label-sm font-label-sm">Panga</span>
+</div>
+</div>
+<!-- Saved Articles List -->
+<div class="space-y-md">
+<!-- Card 1 -->
+<article class="article-card flex gap-md bg-surface p-md rounded-xl border border-outline-variant relative overflow-hidden group">
+<div class="w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A professional aerial photograph of a government office in Zanzibar, showcasing clean white architecture under a bright blue tropical sky. The scene is bathed in natural, warm morning light, emphasizing a sense of transparency and modern civic duty. The image uses a clean, high-contrast aesthetic consistent with a corporate modern design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX3bTb3L_GbWwxfaK3l14Q0mUO7rtNF-H_BVXCfEM7WyGegBX8wFp5VKdA6CkYbRDVPjNUTUURkB305uoJHz9fraW6DqON_bPdcAFf3tzHJDmUFKKi4eBoL1MyOKcww7P8R2y0tMSut0Tn5WoEYUzx0Yk0KpvDqjAyXJIVuhAPkK6sZHOLmdclCNjpCF5fZwJ5ls_U5WnmBlid8d_M86ekrKkDzR3rXwitA5gFTr5CUm9HfqWslGs_ubDP8reLPAZMqGaIr8vgbAnv">
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div class="space-y-1">
+<span class="inline-block px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[10px] font-bold tracking-wider">HABARI</span>
+<h2 class="font-label-lg text-label-lg text-on-surface leading-tight line-clamp-2">Maandalizi ya Uhakiki wa Daftari la Kudumu la Wapiga Kura</h2>
+</div>
+<div class="flex items-center justify-between mt-2">
+<span class="text-label-sm font-label-sm text-on-surface-variant">12 Oktoba 2024</span>
+<button class="material-symbols-outlined text-error p-1 hover:bg-error-container rounded-full transition-colors" data-icon="bookmark_remove">
+                            bookmark_remove
+                        </button>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="article-card flex gap-md bg-surface p-md rounded-xl border border-outline-variant relative overflow-hidden group">
+<div class="w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A close-up high-resolution shot of official electoral documents and a ballot box, styled with a professional and authoritative corporate aesthetic. The lighting is soft and even, highlighting the textures of high-quality paper and the ZEC logo. The color palette is dominated by neutral greys and whites with sharp black accents, conveying institutional integrity and modern governance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLo--wFB_e32_vGWvY8eIezT3xiWE27cEGwdw6bA4qk9aSkBDQbbMQQVp1c5-2qZelFDNN6iu3jgxGrliuvUAXaJVrd7BqRo_BQVGPhKrFR_OOgKdBGtDDm7st358x6ho38Y6hPi9CaZWa90oSWYLc0cYeSUauGhpWjR_lH2D4_XuRyFfEmFWheV6N5CLLHpFxlrUHl7iTXa7v4rK66ZtgQuPDFNrp68P2R8rcJm6oX8YFBTQ0mRpMKDaKZAESf47_Yv3x0T-z6Tlg">
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div class="space-y-1">
+<span class="inline-block px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[10px] font-bold tracking-wider">ELIMU</span>
+<h2 class="font-label-lg text-label-lg text-on-surface leading-tight line-clamp-2">Mafunzo ya Wasimamizi wa Vituo yaanza Unguja</h2>
+</div>
+<div class="flex items-center justify-between mt-2">
+<span class="text-label-sm font-label-sm text-on-surface-variant">9 Oktoba 2024</span>
+<button class="material-symbols-outlined text-error p-1 hover:bg-error-container rounded-full transition-colors" data-icon="bookmark_remove">
+                            bookmark_remove
+                        </button>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="article-card flex gap-md bg-surface p-md rounded-xl border border-outline-variant relative overflow-hidden group">
+<div class="w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A formal meeting setting featuring professional delegates sitting around a polished dark wood table in a modern boardroom. The background shows large windows with a soft-focus view of Zanzibar's cityscape. The lighting is professional and bright, emphasizing a corporate atmosphere of transparency and democratic collaboration. The aesthetic is clean and authoritative." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMd6VNlpH5S1uU6PhfFuPeT55msyZbiWfPpcsQR0mEK1ITDTb29v2Fs5L7zm6E7vIbYunebFsyLdX18ZShrMjBGYqcbzvt-6il6Y2_r0UIMHsZ7Kp50FSJBckyOSygy8Xp2q1FIqYlyj75cFY2q-LSHcqta5wW37h2_ucwE4l3lOxWEgUYwhOlXK-l4bmHzvbT45rDzN9Z8uaWIMz1JYa-_fo6uSH707l0jpYQ5tW2Zn2epCxfptgWEjuVJsQQoiyipOya3yAabdp5">
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div class="space-y-1">
+<span class="inline-block px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[10px] font-bold tracking-wider">HABARI</span>
+<h2 class="font-label-lg text-label-lg text-on-surface leading-tight line-clamp-2">ZEC Yakutana na Wadau wa Vyama vya Siasa</h2>
+</div>
+<div class="flex items-center justify-between mt-2">
+<span class="text-label-sm font-label-sm text-on-surface-variant">7 Oktoba 2024</span>
+<button class="material-symbols-outlined text-error p-1 hover:bg-error-container rounded-full transition-colors" data-icon="bookmark_remove">
+                            bookmark_remove
+                        </button>
+</div>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="article-card flex gap-md bg-surface p-md rounded-xl border border-outline-variant relative overflow-hidden group">
+<div class="w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A minimalist technological concept representing digital voter registration, featuring a sleek smartphone displaying a stylized ballot icon. The image is set against a pristine, soft-grey background with elegant light-mode shadows. The visual style is modern, corporate, and clean, emphasizing accessibility and technological advancement in the electoral process of Zanzibar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGDRW6w0CYcCfsqreUAYtLxf36w24FIcXCpS7ad6u_WfstodyFmxrANPMBsK_J65uY_mi4k0crmxKl35YQF_GIRYR25XobPBEngtTyE7_phoTbuJUJZKuVHn5tsQOflLBg4P0v5K2I0FYqxrLGkXoXp0mgliHWUj2X-sfXKzqHa9LI5O4wZZUDS0q5g-fkq2Nln6f5h4fwnZ95vsqG5eyIbA6YUxIQRMKNk0_FoLPJPNRWJbH59p2eusxleQ6iw-YGRJd1W11Mgg_D">
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div class="space-y-1">
+<span class="inline-block px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[10px] font-bold tracking-wider">TAARIFA</span>
+<h2 class="font-label-lg text-label-lg text-on-surface leading-tight line-clamp-2">Ratiba ya Uandikishaji Wapiga Kura Wapya 2024/2025</h2>
+</div>
+<div class="flex items-center justify-between mt-2">
+<span class="text-label-sm font-label-sm text-on-surface-variant">5 Oktoba 2024</span>
+<button class="material-symbols-outlined text-error p-1 hover:bg-error-container rounded-full transition-colors" data-icon="bookmark_remove">
+                            bookmark_remove
+                        </button>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination/Load More (Subtle) -->
+<div class="pt-4 flex justify-center">
+<button class="px-xl py-3 border border-outline-variant rounded-full text-label-lg font-label-lg text-on-surface hover:bg-surface-container-low transition-colors active:scale-95">
+                Onyesha zaidi
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface border-t border-outline-variant shadow-md flex justify-around items-center px-margin-mobile py-2"><!-- Nyumbani -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-2 py-1 hover:bg-surface-container-low transition-transform active:scale-95 duration-150" href="../nyumbani_home_dashboard/code.html">
+    <span class="material-symbols-outlined" data-icon="home">home</span>
+    <span class="font-label-sm text-label-sm">Nyumbani</span>
+</a>
+<!-- Elimu -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-2 py-1 hover:bg-surface-container-low transition-transform active:scale-95 duration-150" href="../elimu_voter_education/code.html">
+    <span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+    <span class="font-label-sm text-label-sm">Elimu</span>
+</a>
+<!-- Vituo -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-2 py-1 hover:bg-surface-container-low transition-transform active:scale-95 duration-150" href="../ramani_ya_vituo_polling_stations_refined_search/code.html">
+    <span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+    <span class="font-label-sm text-label-sm">Vituo</span>
+</a>
+<!-- Mawasiliano -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-2 py-1 hover:bg-surface-container-low transition-transform active:scale-95 duration-150" href="../mawasiliano_refined_home_button_transition/code.html">
+    <span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+    <span class="font-label-sm text-label-sm">Mawasiliano</span>
+</a>
+<!-- Zaidi (Active/Menu) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-2 py-1 transition-transform active:scale-95 duration-150" href="../zaidi_more_menu/code.html">
+    <span class="material-symbols-outlined" data-icon="menu">menu</span>
+    <span class="font-label-sm text-label-sm">Zaidi</span>
+</a></nav>
+<script>
+        // Simple micro-interaction for removing items
+        document.querySelectorAll('[data-icon="bookmark_remove"]').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const card = e.target.closest('.article-card');
+                card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                card.style.opacity = '0';
+                card.style.transform = 'translateX(20px)';
+                setTimeout(() => {
+                    card.remove();
+                    // Optional: Update count label if needed
+                }, 300);
+            });
+        });
+    </script>
+    <a href="../msaidizi_zec_bot_assistant/code.html" class="fixed bottom-24 right-4 z-40 flex items-center gap-2 rounded-full bg-primary px-4 py-3 text-on-primary shadow-lg transition-transform active:scale-90">
+        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
+            <span class="material-symbols-outlined text-[20px]">smart_toy</span>
+        </span>
+        <span class="text-sm font-semibold">ZEC Bot</span>
+    </a>
+
+</body></html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="light" lang="sw"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kalenda ya Uchaguzi - ZEC App</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#626262",
+                    "on-primary-fixed-variant": "#474746",
+                    "tertiary-fixed": "#e6e2df",
+                    "surface-dim": "#ddd9d8",
+                    "on-background": "#1c1b1b",
+                    "surface-container-low": "#f7f3f2",
+                    "secondary-container": "#e1dfdf",
+                    "outline": "#747878",
+                    "background": "#fdf8f8",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#484645",
+                    "inverse-primary": "#c8c6c5",
+                    "on-tertiary-fixed": "#1c1b1a",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "surface-container-high": "#ebe7e6",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#cac6c4",
+                    "inverse-on-surface": "#f4f0ef",
+                    "on-tertiary-container": "#868382",
+                    "on-primary-container": "#858383",
+                    "on-surface-variant": "#444748",
+                    "tertiary": "#000000",
+                    "surface": "#fdf8f8",
+                    "on-error-container": "#93000a",
+                    "outline-variant": "#c4c7c7",
+                    "surface-tint": "#5f5e5e",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed-dim": "#c7c6c6",
+                    "surface-variant": "#e5e2e1",
+                    "on-secondary-fixed-variant": "#464747",
+                    "primary-container": "#1c1b1b",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#e5e2e1",
+                    "primary": "#000000",
+                    "surface-container": "#f1edec",
+                    "tertiary-container": "#1c1b1a",
+                    "primary-fixed": "#e5e2e1",
+                    "on-primary-fixed": "#1c1b1b",
+                    "secondary": "#5e5e5e",
+                    "secondary-fixed": "#e4e2e2",
+                    "on-primary": "#ffffff",
+                    "on-surface": "#1c1b1b",
+                    "inverse-surface": "#313030",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "surface-bright": "#fdf8f8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "8px",
+                    "gutter": "16px",
+                    "margin-tablet": "32px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "base": "4px",
+                    "xl": "32px",
+                    "lg": "24px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "label-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg-mobile": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "display-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #fdf8f8; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .timeline-line {
+            width: 2px;
+            background: #E0E0E0;
+            position: absolute;
+            left: 23px;
+            top: 24px;
+            bottom: 0;
+            z-index: 0;
+        }
+        .timeline-item:last-child .timeline-line {
+            display: none;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(224, 224, 224, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface mb-24">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile py-sm bg-surface dark:bg-background border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary dark:text-on-primary-fixed" data-icon="account_balance">account_balance</span>
+<h1 class="text-headline-sm-mobile font-headline-sm-mobile font-bold text-primary dark:text-on-primary-fixed">ZEC App</h1>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-xs hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined text-secondary" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-20 px-margin-mobile max-w-2xl mx-auto">
+<!-- Header Section -->
+<section class="mb-lg">
+<h2 class="text-headline-md font-headline-md mb-xs">Kalenda ya Uchaguzi 2025</h2>
+<p class="text-body-md text-secondary">Fuatilia hatua muhimu za mchakato wa kidemokrasia visiwani Zanzibar.</p>
+</section>
+<!-- Progress Overview -->
+<section class="mb-xl p-md rounded-xl bg-surface-container-lowest border border-outline-variant shadow-[0px_2px_8px_rgba(0,0,0,0.05)]">
+<div class="flex justify-between items-end mb-sm">
+<div>
+<span class="text-label-sm uppercase tracking-wider text-secondary">Hatua ya Sasa</span>
+<p class="text-headline-sm font-headline-sm text-primary">Kampeni za Uchaguzi</p>
+</div>
+<span class="text-headline-sm font-headline-sm text-primary">60%</span>
+</div>
+<div class="w-full bg-secondary-container h-3 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 60%"></div>
+</div>
+<p class="mt-sm text-label-sm text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="info">info</span>
+                Siku 42 zimebaki kuelekea Siku ya Kupiga Kura
+            </p>
+</section>
+<!-- Timeline Section -->
+<section class="relative space-y-0">
+<!-- Timeline Item 1: Completed -->
+<div class="timeline-item relative flex gap-md pb-xl">
+<div class="timeline-line"></div>
+<div class="z-10 bg-[#2ECC71] text-white w-12 h-12 rounded-full flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="pt-2">
+<h3 class="font-headline-sm text-headline-sm text-[#2ECC71]">Uandikishaji</h3>
+<p class="text-label-sm text-secondary mb-xs">Januari 15 - Februari 28, 2025</p>
+<p class="text-body-md text-on-surface-variant">Zoezi la uandikishaji wa wapiga kura wapya limekamilika kwa mafanikio makubwa.</p>
+</div>
+</div>
+<!-- Timeline Item 2: Completed -->
+<div class="timeline-item relative flex gap-md pb-xl">
+<div class="timeline-line"></div>
+<div class="z-10 bg-[#2ECC71] text-white w-12 h-12 rounded-full flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="pt-2">
+<h3 class="font-headline-sm text-headline-sm text-[#2ECC71]">Uteuzi wa Wagombea</h3>
+<p class="text-label-sm text-secondary mb-xs">Machi 10 - Machi 25, 2025</p>
+<p class="text-body-md text-on-surface-variant">Tume imekamilisha uteuzi wa wagombea wa nafasi mbalimbali za uongozi.</p>
+</div>
+</div>
+<!-- Timeline Item 3: Active -->
+<div class="timeline-item relative flex gap-md pb-xl">
+<div class="timeline-line"></div>
+<div class="z-10 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shrink-0 shadow-[0px_4px_12px_rgba(0,0,0,0.15)] ring-4 ring-white">
+<span class="material-symbols-outlined" data-icon="campaign" data-weight="fill" style="font-variation-settings: 'FILL' 1;">campaign</span>
+</div>
+<div class="pt-2 flex-1">
+<div class="bg-secondary-fixed-dim/30 p-md rounded-xl border-l-4 border-primary">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Kampeni</h3>
+<p class="text-label-sm text-secondary">Aprili 1 - Juni 14, 2025</p>
+</div>
+<span class="bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-tighter">INAENDELEA</span>
+</div>
+<p class="text-body-md text-on-surface mb-md">Mikutano ya hadhara na kampeni za wagombea zinaendelea katika majimbo yote.</p>
+<button class="w-full py-sm bg-primary text-white rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-sm hover:opacity-90 transition-opacity active:scale-95 duration-100">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications_active">notifications_active</span>
+                            Weka Kumbusho
+                        </button>
+</div>
+</div>
+</div>
+<!-- Timeline Item 4: Upcoming -->
+<div class="timeline-item relative flex gap-md pb-xl opacity-60">
+<div class="timeline-line"></div>
+<div class="z-10 bg-outline-variant text-on-surface-variant w-12 h-12 rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" data-icon="how_to_vote">how_to_vote</span>
+</div>
+<div class="pt-2">
+<h3 class="font-headline-sm text-headline-sm text-secondary">Siku ya Kupiga Kura</h3>
+<p class="text-label-sm text-secondary mb-xs">Juni 15, 2025</p>
+<p class="text-body-md text-on-surface-variant italic">Zoezi litaanza saa 1:00 asubuhi hadi saa 11:00 jioni.</p>
+</div>
+</div>
+<!-- Timeline Item 5: Upcoming -->
+<div class="timeline-item relative flex gap-md pb-xl opacity-60">
+<div class="timeline-line"></div>
+<div class="z-10 bg-outline-variant text-on-surface-variant w-12 h-12 rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" data-icon="announcement">announcement</span>
+</div>
+<div class="pt-2">
+<h3 class="font-headline-sm text-headline-sm text-secondary">Kutangaza Matokeo</h3>
+<p class="text-label-sm text-secondary mb-xs">Juni 16 - Juni 18, 2025</p>
+<p class="text-body-md text-on-surface-variant">Uhakiki na kutangaza rasmi matokeo ya uchaguzi mkuu.</p>
+</div>
+</div>
+</section>
+<!-- Decorative Map Background Element -->
+<div class="mt-lg rounded-2xl overflow-hidden h-48 relative border border-outline-variant">
+<div class="bg-cover bg-center w-full h-full opacity-30" data-alt="A professional architectural photograph of a modern government building in Zanzibar under a bright tropical sun. The scene is shot from a low angle to convey authority and prestige. Lush green palms frame the ivory-colored facade which features elegant arched windows reflecting the blue sky. The lighting is crisp and high-contrast, creating deep shadows and brilliant highlights, emphasizing the corporate modern design aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBDt6TQe9-8DK1mY8Oiwk92u8EWr4GiE6IStY5dYT66ufJSFZWaC_5QrxOkTmJ14mLBszubzDyLcLSI_XBPbb2VEuQ9649wnfY4E1QKXh0clivniSMzcTz_wX6UFBKOE27MsAUqRboVAw-80t_Nb8GPW62P5sM93Fyf-E1dZY0jgmd8wNq9LVMlX1lLIQIAL_SW080Xnih2tZBV2QT-XsFKTVT5RH-zS_46vG3B4VNl8DfCAXbrsjq03GQ5oHIvTuSUROsjH_rAh9jb')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+<div class="absolute bottom-md left-md">
+<p class="text-label-sm font-bold text-primary uppercase">Tume ya Uchaguzi Zanzibar</p>
+<p class="text-body-md text-secondary">Demokrasia Yetu, Maendeleo Yetu.</p>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-xs py-base pb-safe bg-surface dark:bg-background border-t border-outline-variant dark:border-outline shadow-sm">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-3 py-1 hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors" href="../nyumbani_home_dashboard/code.html">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Nyumbani</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-on-secondary-container text-on-secondary-container dark:text-on-secondary rounded-xl px-3 py-1 scale-95 transition-transform duration-100" href="../elimu_voter_education/code.html">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+<span class="font-label-sm text-label-sm">Elimu</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-3 py-1 hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors" href="../ramani_ya_vituo_polling_stations_refined_search/code.html">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+<span class="font-label-sm text-label-sm">Vituo</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-3 py-1 hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors" href="../mawasiliano_refined_home_button_transition/code.html">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span class="font-label-sm text-label-sm">Mawasiliano</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-3 py-1 hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors" href="../zaidi_more_menu/code.html">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+<span class="font-label-sm text-label-sm">Zaidi</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for the "Weka Kumbusho" button
+        document.querySelector('button').addEventListener('click', function() {
+            const icon = this.querySelector('.material-symbols-outlined');
+            const text = this.querySelector('span:not(.material-symbols-outlined)');
+            
+            if(text.innerText === 'Weka Kumbusho') {
+                text.innerText = 'Imewekwa!';
+                icon.innerText = 'check_circle';
+                this.classList.replace('bg-primary', 'bg-[#2ECC71]');
+            } else {
+                text.innerText = 'Weka Kumbusho';
+                icon.innerText = 'notifications_active';
+                this.classList.replace('bg-[#2ECC71]', 'bg-primary');
+            }
+        });
+
+        // Add scroll behavior to header shadow
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+<a href="../msaidizi_zec_bot_assistant/code.html" class="fixed bottom-24 right-4 z-40 flex items-center gap-2 rounded-full bg-primary px-4 py-3 text-on-primary shadow-lg transition-transform active:scale-90">
+    <span class="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
+        <span class="material-symbols-outlined text-[20px]">smart_toy</span>
+    </span>
+    <span class="text-sm font-semibold">ZEC Bot</span>
+</a>
+</body></html>

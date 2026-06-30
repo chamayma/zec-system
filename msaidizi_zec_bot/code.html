@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="light" lang="sw"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ZEC Bot - Msaidizi Wako</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#626262",
+                        "on-primary-fixed-variant": "#474746",
+                        "tertiary-fixed": "#e6e2df",
+                        "surface-dim": "#ddd9d8",
+                        "on-background": "#1c1b1b",
+                        "surface-container-low": "#f7f3f2",
+                        "secondary-container": "#e1dfdf",
+                        "outline": "#747878",
+                        "background": "#fdf8f8",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#484645",
+                        "inverse-primary": "#c8c6c5",
+                        "on-tertiary-fixed": "#1c1b1a",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "surface-container-high": "#ebe7e6",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#cac6c4",
+                        "inverse-on-surface": "#f4f0ef",
+                        "on-tertiary-container": "#868382",
+                        "on-primary-container": "#858383",
+                        "on-surface-variant": "#444748",
+                        "tertiary": "#000000",
+                        "surface": "#fdf8f8",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#c4c7c7",
+                        "surface-tint": "#5f5e5e",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "surface-variant": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#464747",
+                        "primary-container": "#1c1b1b",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e5e2e1",
+                        "primary": "#000000",
+                        "surface-container": "#f1edec",
+                        "tertiary-container": "#1c1b1a",
+                        "primary-fixed": "#e5e2e1",
+                        "on-primary-fixed": "#1c1b1b",
+                        "secondary": "#5e5e5e",
+                        "secondary-fixed": "#e4e2e2",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#1c1b1b",
+                        "inverse-surface": "#313030",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "surface-bright": "#fdf8f8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "gutter": "16px",
+                        "margin-tablet": "32px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "base": "4px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .chat-bubble-left {
+            border-radius: 20px 20px 20px 4px;
+        }
+        .chat-bubble-right {
+            border-radius: 20px 20px 4px 20px;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e5e2e1;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile py-sm bg-surface dark:bg-background border-b border-outline-variant dark:border-outline h-16">
+<div class="flex items-center gap-3">
+<a href="../nyumbani_home_dashboard/code.html" aria-label="Back" class="mr-2 flex h-9 w-9 items-center justify-center rounded-full border border-outline-variant bg-surface-container-low text-on-surface transition-colors hover:bg-surface-container">
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_back">arrow_back</span>
+</a>
+<span class="material-symbols-outlined text-primary dark:text-on-primary-fixed" data-icon="account_balance">account_balance</span>
+<h1 class="text-headline-sm-mobile font-headline-sm-mobile font-bold text-primary dark:text-on-primary-fixed">ZEC App</h1>
+</div>
+<div class="flex items-center gap-4">
+<!-- Language Toggle -->
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-full border border-outline-variant hover:bg-surface-container-low transition-colors" onclick="toggleLanguage()">
+<span class="material-symbols-outlined text-[18px]" data-icon="translate">translate</span>
+<span class="font-label-lg text-label-lg" id="lang-text">English</span>
+</button>
+<span class="material-symbols-outlined text-secondary dark:text-secondary-fixed" data-icon="notifications">notifications</span>
+</div>
+</header>
+<!-- Chat Canvas -->
+<main class="flex-1 mt-16 pb-[160px] md:pb-32 overflow-y-auto px-margin-mobile">
+<div class="max-w-2xl mx-auto pt-lg">
+<!-- Chat Title & Header -->
+<div class="flex flex-col items-center mb-xl text-center">
+<div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center mb-sm shadow-sm overflow-hidden">
+<img class="w-10 h-10 object-contain invert" data-alt="A professional circular logo mark for the Zanzibar Electoral Commission, featuring a stylized crest with local cultural symbols in deep black and clean white. The lighting is crisp and modern, reflecting an official government authority atmosphere with a minimalist corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfSkmSBEIm0EF8DYINye5kM57bBYmIhNIuCJhaJ6U9EhyA-8p1q3AS7lozJ61bMYDgzMu9cMrPydM0x71HzgYEGg9a9b0BbPwce31PG6-DXS8_tHaqPit-KZOyz8yFEb_QYt7fSStH09TENJicNYGwxykwLDycB_ULM3FR1YLWHQouM7-AY2DIX22o3UgIT9TmGzSEH61z6xOSN2xILS45cV8OHxtWowUPHBbmBxYLWof75fND-mal5zSujylRYz3PsftaZ7HiwP29"/>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary mb-xs">ZEC Bot - Msaidizi wako</h2>
+<p class="font-body-md text-body-md text-secondary max-w-xs">Pata majibu ya haraka kuhusu uchaguzi na kujiandikisha.</p>
+</div>
+<!-- Chat Bubbles -->
+<div class="space-y-lg" id="chat-messages">
+<!-- Bot Message -->
+<div class="flex items-start gap-sm">
+<div class="w-8 h-8 rounded-full bg-primary flex-shrink-0 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[16px]" data-icon="smart_toy">smart_toy</span>
+</div>
+<div class="chat-bubble-left bg-primary text-on-primary p-md max-w-[85%] shadow-sm">
+<p class="font-body-md text-body-md">Habari! Mimi ni msaidizi wa ZEC. Una swali lolote?</p>
+<span class="text-[10px] opacity-70 mt-2 block text-right">09:41 AM</span>
+</div>
+</div>
+<!-- Suggested Questions (Quick Replies) -->
+<div class="flex flex-wrap gap-sm ml-10">
+<button class="bg-surface-container-high hover:bg-secondary-container transition-colors font-label-lg text-label-lg px-lg py-sm rounded-full border border-outline-variant text-on-surface" onclick="sendQuickReply('Nikapigie kura wapi?')">
+                        Nikapigie kura wapi?
+                    </button>
+<button class="bg-surface-container-high hover:bg-secondary-container transition-colors font-label-lg text-label-lg px-lg py-sm rounded-full border border-outline-variant text-on-surface" onclick="sendQuickReply('Uchaguzi ni lini?')">
+                        Uchaguzi ni lini?
+                    </button>
+<button class="bg-surface-container-high hover:bg-secondary-container transition-colors font-label-lg text-label-lg px-lg py-sm rounded-full border border-outline-variant text-on-surface" onclick="sendQuickReply('Jinsi ya kujiandikisha?')">
+                        Jinsi ya kujiandikisha?
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Action Bar / Input -->
+<div class="fixed bottom-0 left-0 w-full z-50 glass-effect border-t border-outline-variant px-margin-mobile py-md pb-safe">
+<div class="max-w-2xl mx-auto">
+<div class="relative flex items-center gap-sm">
+<button class="flex items-center justify-center w-12 h-12 rounded-xl text-secondary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+</button>
+<div class="flex-1 relative">
+<input class="w-full bg-surface-container-lowest border-outline-variant rounded-xl px-md py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all pr-12" id="chat-input" placeholder="Andika ujumbe hapa..." type="text"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center" onclick="sendMessage()">
+<span class="material-symbols-outlined text-[18px]" data-icon="send" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Navigation Shell (Desktop/Hybrid View Mockup) -->
+<div class="hidden md:flex justify-around items-center mt-md max-w-lg mx-auto opacity-40">
+<div class="flex flex-col items-center"><span class="material-symbols-outlined" data-icon="home">home</span><span class="text-[10px]">Nyumbani</span></div>
+<div class="flex flex-col items-center"><span class="material-symbols-outlined" data-icon="school">school</span><span class="text-[10px]">Elimu</span></div>
+<div class="flex flex-col items-center"><span class="material-symbols-outlined" data-icon="location_on">location_on</span><span class="text-[10px]">Vituo</span></div>
+<div class="flex flex-col items-center text-primary"><span class="material-symbols-outlined" data-icon="contact_support" style="font-variation-settings: 'FILL' 1;">contact_support</span><span class="text-[10px] font-bold">Mawasiliano</span></div>
+<div class="flex flex-col items-center"><span class="material-symbols-outlined" data-icon="menu">menu</span><span class="text-[10px]">Zaidi</span></div>
+</div>
+</div>
+<!-- BottomNavBar (Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-xs py-base pb-safe bg-surface dark:bg-background border-t border-outline-variant dark:border-outline shadow-sm md:hidden">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-3 py-1 hover:bg-surface-container dark:hover:bg-surface-container-high transition-transform active:scale-95 duration-100">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Nyumbani</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-3 py-1 hover:bg-surface-container dark:hover:bg-surface-container-high transition-transform active:scale-95 duration-100">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+<span class="font-label-sm text-label-sm">Elimu</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-3 py-1 hover:bg-surface-container dark:hover:bg-surface-container-high transition-transform active:scale-95 duration-100">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+<span class="font-label-sm text-label-sm">Vituo</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container dark:bg-on-secondary-container text-on-secondary-container dark:text-on-secondary rounded-xl px-3 py-1 transition-transform active:scale-95 duration-100">
+<span class="material-symbols-outlined" data-icon="contact_support" style="font-variation-settings: 'FILL' 1;">contact_support</span>
+<span class="font-label-sm text-label-sm">Mawasiliano</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-3 py-1 hover:bg-surface-container dark:hover:bg-surface-container-high transition-transform active:scale-95 duration-100">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+<span class="font-label-sm text-label-sm">Zaidi</span>
+</button>
+</nav>
+<script>
+        function toggleLanguage() {
+            const btnText = document.getElementById('lang-text');
+            btnText.innerText = btnText.innerText === 'English' ? 'Swahili' : 'English';
+        }
+
+        const chatContainer = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+
+        function sendMessage() {
+            const text = chatInput.value.trim();
+            if (!text) return;
+
+            appendMessage(text, 'user');
+            chatInput.value = '';
+
+            // Simulate bot response
+            setTimeout(() => {
+                appendMessage("Asante kwa swali lako. Ninashughulikia jibu sahihi kwa ajili yako...", 'bot');
+            }, 800);
+        }
+
+        function sendQuickReply(text) {
+            appendMessage(text, 'user');
+            setTimeout(() => {
+                let response = "Samahani, kwa sasa taarifa hizo zinahudumiwa na mtoa huduma wa binadamu. Unaweza kupiga simu namba 0800 000 111.";
+                if(text.includes('lini')) response = "Uchaguzi wa Zanzibar umepangwa kufanyika mwezi wa 10, 2025.";
+                if(text.includes('jiandikisha')) response = "Unaweza kujiandikisha katika kituo chochote cha ZEC kilicho karibu nawe na kitambulisho chako cha Mkaazi.";
+                appendMessage(response, 'bot');
+            }, 600);
+        }
+
+        function appendMessage(text, sender) {
+            const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            const messageDiv = document.createElement('div');
+            messageDiv.className = sender === 'user' ? 'flex justify-end' : 'flex items-start gap-sm';
+            
+            if (sender === 'user') {
+                messageDiv.innerHTML = `
+                    <div class="chat-bubble-right bg-surface-container-highest text-on-surface p-md max-w-[85%] shadow-sm">
+                        <p class="font-body-md text-body-md">${text}</p>
+                        <span class="text-[10px] opacity-60 mt-2 block text-right">${time}</span>
+                    </div>
+                `;
+            } else {
+                messageDiv.innerHTML = `
+                    <div class="w-8 h-8 rounded-full bg-primary flex-shrink-0 flex items-center justify-center text-white">
+                        <span class="material-symbols-outlined text-[16px]" data-icon="smart_toy">smart_toy</span>
+                    </div>
+                    <div class="chat-bubble-left bg-primary text-on-primary p-md max-w-[85%] shadow-sm">
+                        <p class="font-body-md text-body-md">${text}</p>
+                        <span class="text-[10px] opacity-70 mt-2 block text-right">${time}</span>
+                    </div>
+                `;
+            }
+            chatContainer.appendChild(messageDiv);
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+    </script>
+</body></html>

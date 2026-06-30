@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html class="light" lang="sw"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ZEC - Matokeo ya Uchaguzi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#626262",
+                    "on-primary-fixed-variant": "#474746",
+                    "tertiary-fixed": "#e6e2df",
+                    "surface-dim": "#ddd9d8",
+                    "on-background": "#1c1b1b",
+                    "surface-container-low": "#f7f3f2",
+                    "secondary-container": "#e1dfdf",
+                    "outline": "#747878",
+                    "background": "#fdf8f8",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#484645",
+                    "inverse-primary": "#c8c6c5",
+                    "on-tertiary-fixed": "#1c1b1a",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "surface-container-high": "#ebe7e6",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#cac6c4",
+                    "inverse-on-surface": "#f4f0ef",
+                    "on-tertiary-container": "#868382",
+                    "on-primary-container": "#858383",
+                    "on-surface-variant": "#444748",
+                    "tertiary": "#000000",
+                    "surface": "#fdf8f8",
+                    "on-error-container": "#93000a",
+                    "outline-variant": "#c4c7c7",
+                    "surface-tint": "#5f5e5e",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed-dim": "#c7c6c6",
+                    "surface-variant": "#e5e2e1",
+                    "on-secondary-fixed-variant": "#464747",
+                    "primary-container": "#1c1b1b",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#e5e2e1",
+                    "primary": "#000000",
+                    "surface-container": "#f1edec",
+                    "tertiary-container": "#1c1b1a",
+                    "primary-fixed": "#e5e2e1",
+                    "on-primary-fixed": "#1c1b1b",
+                    "secondary": "#5e5e5e",
+                    "secondary-fixed": "#e4e2e2",
+                    "on-primary": "#ffffff",
+                    "on-surface": "#1c1b1b",
+                    "inverse-surface": "#313030",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "surface-bright": "#fdf8f8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "8px",
+                    "gutter": "16px",
+                    "margin-tablet": "32px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "base": "4px",
+                    "xl": "32px",
+                    "lg": "24px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "label-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg-mobile": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "display-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .chart-bar { transition: height 1s ease-out; }
+        .donut-segment { transition: stroke-dasharray 1s ease-out; }
+        .elevation-1 { box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile py-sm bg-surface dark:bg-background border-b border-outline-variant dark:border-outline flat no shadows">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary dark:text-on-primary-fixed">account_balance</span>
+<h1 class="text-headline-sm-mobile font-headline-sm-mobile font-bold text-primary dark:text-on-primary-fixed">ZEC App</h1>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-secondary dark:text-secondary-fixed">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-margin-mobile max-w-7xl mx-auto">
+<!-- Title & Page Header -->
+<div class="mb-lg">
+<h2 class="font-headline-md text-headline-md text-primary mb-xs">Matokeo ya Uchaguzi</h2>
+<p class="font-body-md text-secondary">Takwimu za sasa za ushiriki wa wapiga kura Zanzibar.</p>
+</div>
+<!-- Dashboard Cards - Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md mb-lg">
+<!-- Total Voters Card -->
+<div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant elevation-1 flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<span class="font-label-lg text-secondary">Wapiga Kura Wote</span>
+<span class="material-symbols-outlined text-primary">groups</span>
+</div>
+<div class="font-headline-md text-headline-md text-primary">566,352</div>
+</div>
+<!-- Participation Card -->
+<div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant elevation-1 flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<span class="font-label-lg text-secondary">Walioshiriki</span>
+<span class="material-symbols-outlined text-primary">how_to_vote</span>
+</div>
+<div class="flex items-end gap-xs">
+<span class="font-headline-md text-headline-md text-primary">88%</span>
+<span class="text-label-sm text-on-error-container bg-error-container px-2 py-0.5 rounded-full mb-1">+2.4%</span>
+</div>
+</div>
+<!-- Disability Card -->
+<div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant elevation-1 flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<span class="font-label-lg text-secondary">Wenye Ulemavu</span>
+<span class="material-symbols-outlined text-primary">accessible</span>
+</div>
+<div class="font-headline-md text-headline-md text-primary">12,400</div>
+</div>
+<!-- Donut Progress Card -->
+<div class="bg-primary text-on-primary p-md rounded-xl border border-outline-variant elevation-2 flex items-center justify-between h-32">
+<div class="flex flex-col gap-1">
+<span class="font-label-lg text-surface-variant">Ushiriki</span>
+<span class="font-headline-sm text-headline-sm">88.0%</span>
+</div>
+<div class="relative w-16 h-16">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-on-primary/20" cx="32" cy="32" fill="transparent" r="28" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-on-primary donut-segment" cx="32" cy="32" fill="transparent" r="28" stroke="currentColor" stroke-dasharray="175.9" stroke-dashoffset="21.1" stroke-linecap="round" stroke-width="6"></circle>
+</svg>
+</div>
+</div>
+</div>
+<!-- Main Content Area: Charts & Table -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<!-- Turnout Chart Section -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-lg rounded-xl border border-outline-variant elevation-1">
+<div class="flex justify-between items-center mb-lg">
+<h3 class="font-headline-sm text-headline-sm text-primary">Mwenendo wa Upigaji Kura</h3>
+<div class="flex gap-2">
+<button class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-lg text-label-sm">Saa</button>
+<button class="hover:bg-surface-container text-secondary px-3 py-1 rounded-lg text-label-sm">Siku</button>
+</div>
+</div>
+<!-- Custom Bar Chart Visualization -->
+<div class="h-64 flex items-end justify-between gap-sm pt-4">
+<div class="flex flex-col items-center flex-1 gap-sm">
+<div class="w-full bg-secondary-container rounded-t-lg chart-bar" style="height: 40%;"></div>
+<span class="text-label-sm text-secondary">08:00</span>
+</div>
+<div class="flex flex-col items-center flex-1 gap-sm">
+<div class="w-full bg-secondary-container rounded-t-lg chart-bar" style="height: 65%;"></div>
+<span class="text-label-sm text-secondary">10:00</span>
+</div>
+<div class="flex flex-col items-center flex-1 gap-sm">
+<div class="w-full bg-primary rounded-t-lg chart-bar" style="height: 90%;"></div>
+<span class="text-label-sm text-secondary">12:00</span>
+</div>
+<div class="flex flex-col items-center flex-1 gap-sm">
+<div class="w-full bg-secondary-container rounded-t-lg chart-bar" style="height: 85%;"></div>
+<span class="text-label-sm text-secondary">14:00</span>
+</div>
+<div class="flex flex-col items-center flex-1 gap-sm">
+<div class="w-full bg-secondary-container rounded-t-lg chart-bar" style="height: 70%;"></div>
+<span class="text-label-sm text-secondary">16:00</span>
+</div>
+<div class="flex flex-col items-center flex-1 gap-sm">
+<div class="w-full bg-secondary-container rounded-t-lg chart-bar" style="height: 30%;"></div>
+<span class="text-label-sm text-secondary">18:00</span>
+</div>
+</div>
+</div>
+<!-- Regional Breakdown List -->
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant elevation-1">
+<div class="flex justify-between items-center mb-lg">
+<h3 class="font-headline-sm text-headline-sm text-primary">Mikoa</h3>
+<span class="material-symbols-outlined text-secondary">filter_list</span>
+</div>
+<div class="space-y-4">
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-body-md text-on-surface">
+<span>Mjini Magharibi</span>
+<span class="font-bold">92%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 92%;"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-body-md text-on-surface">
+<span>Kaskazini Unguja</span>
+<span class="font-bold">85%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 85%;"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-body-md text-on-surface">
+<span>Kusini Unguja</span>
+<span class="font-bold">89%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 89%;"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-body-md text-on-surface">
+<span>Kaskazini Pemba</span>
+<span class="font-bold">87%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 87%;"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-body-md text-on-surface">
+<span>Kusini Pemba</span>
+<span class="font-bold">84%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 84%;"></div>
+</div>
+</div>
+</div>
+<button class="w-full mt-lg py-sm border border-outline-variant rounded-xl text-label-lg text-primary hover:bg-surface-container transition-colors">
+                    Angalia Mikoa Yote
+                </button>
+</div>
+</div>
+<!-- Table Breakdown -->
+<div class="mt-lg bg-surface-container-lowest rounded-xl border border-outline-variant elevation-1 overflow-hidden">
+<div class="p-lg border-b border-outline-variant flex justify-between items-center">
+<h3 class="font-headline-sm text-headline-sm text-primary">Mchanganuo wa Majimbo</h3>
+<div class="flex gap-md">
+<div class="relative">
+<input class="pl-10 pr-4 py-2 border border-outline-variant rounded-xl text-body-md focus:ring-2 focus:ring-primary focus:border-primary outline-none" placeholder="Tafuta jimbo..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-secondary">search</span>
+</div>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container text-on-surface-variant font-label-lg">
+<tr>
+<th class="px-lg py-md">Jimbo</th>
+<th class="px-lg py-md">Wapiga Kura</th>
+<th class="px-lg py-md">Waliojitokeza</th>
+<th class="px-lg py-md">Ushiriki (%)</th>
+<th class="px-lg py-md text-right">Hali</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant text-body-md">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-lg py-md font-medium">Malindi</td>
+<td class="px-lg py-md">12,450</td>
+<td class="px-lg py-md">11,205</td>
+<td class="px-lg py-md">90.0%</td>
+<td class="px-lg py-md text-right">
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-label-sm font-bold">Imekamilika</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-lg py-md font-medium">Stone Town</td>
+<td class="px-lg py-md">8,200</td>
+<td class="px-lg py-md">7,380</td>
+<td class="px-lg py-md">90.0%</td>
+<td class="px-lg py-md text-right">
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-label-sm font-bold">Imekamilika</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-lg py-md font-medium">Chake Chake</td>
+<td class="px-lg py-md">15,600</td>
+<td class="px-lg py-md">13,260</td>
+<td class="px-lg py-md">85.0%</td>
+<td class="px-lg py-md text-right">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm font-bold">Inaendelea</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-lg py-md font-medium">Wete</td>
+<td class="px-lg py-md">14,100</td>
+<td class="px-lg py-md">12,408</td>
+<td class="px-lg py-md">88.0%</td>
+<td class="px-lg py-md text-right">
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-label-sm font-bold">Imekamilika</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-lg flex justify-center border-t border-outline-variant">
+<button class="text-label-lg text-primary flex items-center gap-xs">
+                    Tazama Majimbo Yote <span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-xs py-base pb-safe bg-surface dark:bg-background border-t border-outline-variant dark:border-outline shadow-sm">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-3 py-1 hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Nyumbani</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-3 py-1 hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">school</span>
+<span class="font-label-sm text-label-sm">Elimu</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container dark:bg-on-secondary-container text-on-secondary-container dark:text-on-secondary rounded-xl px-3 py-1 scale-95 transition-transform duration-100">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-label-sm text-label-sm">Matokeo</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-3 py-1 hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">contact_support</span>
+<span class="font-label-sm text-label-sm">Mawasiliano</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-3 py-1 hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">menu</span>
+<span class="font-label-sm text-label-sm">Zaidi</span>
+</button>
+</nav>
+<script>
+        // Simple interactive micro-interactions
+        document.querySelectorAll('.chart-bar').forEach(bar => {
+            bar.addEventListener('mouseenter', () => {
+                bar.classList.add('opacity-80');
+            });
+            bar.addEventListener('mouseleave', () => {
+                bar.classList.remove('opacity-80');
+            });
+        });
+
+        // Simulating chart animation on load
+        window.addEventListener('DOMContentLoaded', () => {
+            const donut = document.querySelector('.donut-segment');
+            if (donut) {
+                donut.style.strokeDashoffset = "21.1"; // 88% of 175.9 is ~154.8, so offset is 175.9 - 154.8 = 21.1
+            }
+        });
+    </script>
+<a href="../msaidizi_zec_bot_assistant/code.html" class="fixed bottom-24 right-4 z-40 flex items-center gap-2 rounded-full bg-primary px-4 py-3 text-on-primary shadow-lg transition-transform active:scale-90">
+  <span class="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
+    <span class="material-symbols-outlined text-[20px]">smart_toy</span>
+  </span>
+  <span class="text-sm font-semibold">ZEC Bot</span>
+</a>
+</body></html>

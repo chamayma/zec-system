@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="light" lang="sw"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>ZEC - Habari na Vyombo vya Habari</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#1c1b1b",
+                        "on-tertiary-fixed": "#1c1b1a",
+                        "tertiary": "#000000",
+                        "secondary-fixed": "#e4e2e2",
+                        "primary-fixed": "#e5e2e1",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#474746",
+                        "inverse-on-surface": "#f4f0ef",
+                        "surface": "#fdf8f8",
+                        "secondary-container": "#e1dfdf",
+                        "primary-container": "#1c1b1b",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#c8c6c5",
+                        "on-secondary-fixed-variant": "#464747",
+                        "inverse-surface": "#313030",
+                        "tertiary-fixed-dim": "#cac6c4",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-primary-container": "#858383",
+                        "surface-tint": "#5f5e5e",
+                        "on-tertiary-container": "#868382",
+                        "on-tertiary-fixed-variant": "#484645",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#ebe7e6",
+                        "outline": "#747878",
+                        "tertiary-container": "#1c1b1a",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-secondary-container": "#626262",
+                        "surface-variant": "#e5e2e1",
+                        "surface-container": "#f1edec",
+                        "surface-bright": "#fdf8f8",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e5e2e1",
+                        "secondary": "#5e5e5e",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#ddd9d8",
+                        "primary": "#000000",
+                        "on-surface-variant": "#444748",
+                        "on-background": "#1c1b1b",
+                        "outline-variant": "#c4c7c7",
+                        "background": "#fdf8f8",
+                        "tertiary-fixed": "#e6e2df",
+                        "surface-container-low": "#f7f3f2",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "xs": "4px",
+                        "gutter": "16px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "sm": "8px",
+                        "margin-tablet": "32px",
+                        "margin-mobile": "16px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .card-shadow { box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05); }
+        .active-shadow { box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="bg-surface sticky top-0 z-50 flex justify-between items-center w-full px-margin-mobile md:px-margin-tablet h-14 border-b border-outline-variant">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="account_balance">account_balance</span>
+<h1 class="font-headline-sm text-headline-sm-mobile md:text-headline-sm text-primary">Habari</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-surface-variant/50 rounded-full transition-colors duration-200">
+<span class="material-symbols-outlined text-secondary" data-icon="search">search</span>
+</button>
+<button class="p-2 hover:bg-surface-variant/50 rounded-full transition-colors duration-200">
+<span class="material-symbols-outlined text-secondary" data-icon="translate">translate</span>
+</button>
+</div>
+</header>
+<main class="max-w-screen-xl mx-auto px-margin-mobile md:px-margin-tablet py-lg">
+<!-- Featured News Hero -->
+<section class="mb-lg">
+<div class="relative group overflow-hidden rounded-xl bg-white card-shadow border border-outline-variant">
+<div class="aspect-[16/9] w-full overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A professional photograph of a modern Zanzibar government building at dawn, with a focus on the Zanzibar Electoral Commission's official signage. The lighting is soft and golden, highlighting the architectural details in a clean, authoritative corporate style. The overall mood is one of transparency and civic duty, using a palette of neutral whites and greys with sharp black accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFqBtkCDE983iMrrXBW-t5cF297H-9gPc1X0UcNGfHw47B9t7Oa4W9njVjJqX3OZ3Y_MviNNnXiT_qRonhy12vkeuZze8cVK0TcFaTErqWE5RvZpPHvNEWc6ph_khDhYUuyGt5TVq5LbTGv4D-5prmV-cH4WhMzhLiRGcIAyxhX_Ifg_AXn-Z59hNevQQMLLYfHiaoe4uXCAf-PkwkYmdWAi0AaMSI4Xn0qHyHZt6oTToCh2FmFssDfHx1GCIhkeoISW1dWT3tusXT"/>
+</div>
+<div class="p-md bg-white">
+<div class="flex items-center gap-2 mb-sm">
+<span class="bg-primary text-on-primary px-3 py-0.5 rounded-full text-label-sm font-label-sm uppercase tracking-wide">Muhimu</span>
+<span class="text-secondary text-label-sm font-label-sm">Mei 14, 2025</span>
+</div>
+<h2 class="font-headline-md text-headline-sm-mobile md:text-headline-md text-primary mb-sm leading-tight">Ratiba ya Uhakiki wa Wapiga Kura 2025: Maeneo na Tarehe</h2>
+<p class="text-secondary text-body-md line-clamp-2 mb-md">Tume ya Uchaguzi Zanzibar (ZEC) inatangaza kuanza kwa mchakato wa uhakiki wa daftari la wapiga kura kwa visiwa vyote vya Unguja na Pemba...</p>
+<button class="flex items-center gap-2 text-primary font-label-lg hover:underline">
+                        Soma Zaidi
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- News Categories (Chips) -->
+<section class="mb-lg -mx-margin-mobile px-margin-mobile overflow-x-auto hide-scrollbar flex gap-3">
+<button class="whitespace-nowrap px-6 py-2 rounded-full bg-primary text-on-primary font-label-lg transition-transform active:scale-95">Zote</button>
+<button class="whitespace-nowrap px-6 py-2 rounded-full bg-surface-container text-on-surface-variant border border-outline-variant font-label-lg hover:bg-surface-variant transition-colors">Matangazo</button>
+<button class="whitespace-nowrap px-6 py-2 rounded-full bg-surface-container text-on-surface-variant border border-outline-variant font-label-lg hover:bg-surface-variant transition-colors">Video</button>
+<button class="whitespace-nowrap px-6 py-2 rounded-full bg-surface-container text-on-surface-variant border border-outline-variant font-label-lg hover:bg-surface-variant transition-colors">Picha</button>
+<button class="whitespace-nowrap px-6 py-2 rounded-full bg-surface-container text-on-surface-variant border border-outline-variant font-label-lg hover:bg-surface-variant transition-colors">Hotuba</button>
+</section>
+<!-- News Feed -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-md mb-xl">
+<!-- News Card 1 -->
+<div class="flex gap-md bg-white p-md rounded-xl card-shadow border border-outline-variant hover:border-primary transition-colors cursor-pointer">
+<div class="w-24 h-24 shrink-0 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A close-up high-definition shot of a professional voting ballot box in a brightly lit, clean environment. The scene is characterized by a minimalist light-mode aesthetic with high contrast between the dark ballot slot and the pristine white surface. Soft shadows give a sense of depth and corporate authority, emphasizing the transparency of the electoral process." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxS8YoJ4HdGbSoS57s4qU_NNRwPbxf0gZ3u7a2TUejx2RXF9Sc6w0_vA591T_Oc_rj5yUXHuf8kqkwFz3Uwg-cW41Tr-g2dIArs5UHzQt6v5KzbZ0Mmu9U5VuhhlOKCAsn1p7Q-sJAE6_pJLtqPG6AQ6_iS2X-0eWqmcLLCGkvj4lzMNmcfRwTeMn-Wvco7YyCsBaWlIS92szKNxGyTiIthLIU3UjfG-gZ2GnNHQZibUaAAGaf0NWHcuRpkl6JHJwRZoW3IAcCkOzU"/>
+</div>
+<div class="flex flex-col justify-between">
+<div>
+<span class="text-secondary text-label-sm font-label-sm">Mei 12, 2025</span>
+<h3 class="font-label-lg text-primary line-clamp-2 mt-1">Uteuzi wa Wasimamizi wa Vituo vya Uchaguzi Pemba</h3>
+</div>
+<span class="text-primary font-label-sm flex items-center gap-1 mt-2">
+                        Soma zaidi <span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+</span>
+</div>
+</div>
+<!-- News Card 2 -->
+<div class="flex gap-md bg-white p-md rounded-xl card-shadow border border-outline-variant hover:border-primary transition-colors cursor-pointer">
+<div class="w-24 h-24 shrink-0 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A photo showing a professional boardroom setting where officials are engaged in a serious discussion. The room is modern, with large glass windows and minimalist furniture. The lighting is bright and even, typical of a high-end light-mode UI design. The focus is on a large digital screen displaying data charts, reflecting a sophisticated and data-driven government institution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7jq6mK0Xb6T_oNpSaxgljDjCZxWVztYnkRb6xWH6E2bafmsSEaDUXlIeJPfUxL-hbnGkCzLQJKFtlCbWUlC75uTT_A0d5EhUNlfs4J42eWP2foPJS8dFfzLujFDSclef5eoY0MuBMDLItm9DEpMjveslhwu4LixMs0M3H-gTEUeX5qXQjIxYdznNdvYKeMNM2fWGcvBo7-udEg4-8KNOGfphmQ3QrUnaV2dpPp3n1BmxohAYD_vZZiiWrAaWuYhaHZppW3zIVranl"/>
+</div>
+<div class="flex flex-col justify-between">
+<div>
+<span class="text-secondary text-label-sm font-label-sm">Mei 10, 2025</span>
+<h3 class="font-label-lg text-primary line-clamp-2 mt-1">Mkutano wa ZEC na Vyama vya Siasa Visiwani</h3>
+</div>
+<span class="text-primary font-label-sm flex items-center gap-1 mt-2">
+                        Soma zaidi <span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+</span>
+</div>
+</div>
+<!-- News Card 3 -->
+<div class="flex gap-md bg-white p-md rounded-xl card-shadow border border-outline-variant hover:border-primary transition-colors cursor-pointer">
+<div class="w-24 h-24 shrink-0 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A clean, flat lay photograph of official government documents and a high-end silver pen resting on a dark wood surface. The documents feature the Zanzibar Electoral Commission's official crest. The image is styled with professional lighting and a clear corporate aesthetic, prioritizing legibility and a sense of trust through a balanced monochromatic palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASxZJe4fmBc9e0G4lXUz6-UmyPjJ1rpI7MPKFQCXcnWiEdE9UlTjn2zOqi5lrhp7YQNKKT_Fa5Tet176P0smSzrLM6KAsgmOwg5RJ_NVKG3RyJ-iS2RbzvbbJmPTPrv2fSZ8p91PMl8g3h22mO8x3jyvqNeWcRKRo2Hf7l8jFXuxBMBTETkGYS9UKsH2hzlg5lb9psGfdnAHvPhP50wAu4LB2E90YbS1fC0sAKPU4v0Eg3besv_AeZzoayBoUz6ilDDtdDaOqECnWo"/>
+</div>
+<div class="flex flex-col justify-between">
+<div>
+<span class="text-secondary text-label-sm font-label-sm">Mei 08, 2025</span>
+<h3 class="font-label-lg text-primary line-clamp-2 mt-1">Mwongozo Mpya wa Elimu ya Mpiga Kura kwa Umma</h3>
+</div>
+<span class="text-primary font-label-sm flex items-center gap-1 mt-2">
+                        Soma zaidi <span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+</span>
+</div>
+</div>
+</section>
+<!-- Multimedia Section -->
+<section class="mb-lg">
+<div class="flex justify-between items-end mb-md">
+<h2 class="font-headline-sm text-headline-sm-mobile text-primary">Maktaba ya Vyombo vya Habari</h2>
+<button class="text-primary font-label-lg hover:underline flex items-center gap-1">
+                    Tazama Zote <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<!-- Video Item -->
+<div class="relative group aspect-video rounded-lg overflow-hidden bg-surface-container-highest cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="A still frame from a high-quality corporate video production showing the coastline of Stone Town, Zanzibar, at dusk. The water is calm and reflects the warm orange sky. A play button overlay is centered, implying video content. The visual style is vibrant yet professional, fitting for a prestigious national institution's media gallery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4e_GitXYU2OapaXWLBL1qoYi2XhHwQcjmGdqK878NG0xVnIwN88gUGr_LvzbiFCOQs4qcsHHdXovrek6Zh1mNbCiWM5HFfgT33wdNjEhIboMng3ma-MzIYVHjOnF9NcnhBC9vKcJ5vlYlyRdrn-nhYJfQS6TkX_0dOTsEcP7nZDGdU6W5loEKJbu7emGiqi3vNnCtCba6YGb3F6O0lOHwpnqrHjaPs1r1tsobNGMg0Cd18B2NTh0N8Jf4C654YttEHtW8DmZQP_5R"/>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center transition-opacity group-hover:bg-black/40">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="play_circle" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black/80 to-transparent">
+<p class="text-white text-label-sm font-label-sm truncate">Ujumbe wa Mwenyekiti</p>
+</div>
+</div>
+<!-- Photo Gallery Item -->
+<div class="relative group aspect-video rounded-lg overflow-hidden bg-surface-container-highest cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="A high-resolution photograph of a group of diverse Zanzibar citizens standing in an orderly line outside a modern polling station. The environment is clean and well-lit with natural sunlight. The image conveys a sense of peaceful democratic participation and community. The style is sharp and contemporary, using a rich, natural color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_iv-r6kWgANCyrxhXhZ_BOXTFfOd7T8Q4BhQZuqJDKjzaXTqn7iYvFayH_c5y7OfhFY_mjn9y8bx98kLDPHnqMLy_9DjrGCKjMjjvlqLl4EOSTptTI69ewWnU6U98n4ybt1HFOSXGnI4c2isFz2LdUvV4BaQx_mV2jBvX80dAXIOoka9OJUp8VJrHAZTIJzerUWGN3btjY3i6SaUi9r4drUau68e3TpebNLLWLdqUsON1FOOaevJR2YKUExRBcK7cq9DlLEPfnBCm"/>
+<div class="absolute inset-0 flex items-end p-2 bg-gradient-to-t from-black/80 to-transparent">
+<div class="flex items-center gap-1 text-white">
+<span class="material-symbols-outlined text-sm" data-icon="photo_library">photo_library</span>
+<p class="text-label-sm font-label-sm truncate">Picha: Mazoezi ya Uhakiki</p>
+</div>
+</div>
+</div>
+<!-- Video Item 2 -->
+<div class="relative group aspect-video rounded-lg overflow-hidden bg-surface-container-highest cursor-pointer hidden md:block">
+<img class="w-full h-full object-cover" data-alt="A professional studio setup with a news anchor desk and large monitors in the background displaying the ZEC logo. The lighting is sophisticated, with blue and white accents against a dark background, creating a high-tech newsroom atmosphere. This represents the institutional media presence and transparency in communication." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEv57_4L_3BVMnO_RznR5N6ww3uMo4nYOJ6yDcOCmDM_3KM08nmJ6Zb_fCZ8VREnWiwK42rLZ9a2P71btC7XpoZNM_O-IzrdF7uHIJVlEytrQUBeybgVJKTcrbX3uDgdJJtPMBpX4dufz2vNZ-IKdH2dhL0MJRHvTbE2WDQgCkGww6an7Yq5gGKtOItDcSNbWv1AxLqiFxqO7LJScFijoqIuSjAJoZkjJPMDga2cDdPu3TJVeU9s6Bn9ftanhkE9-FOC8UZajhMFfS"/>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center transition-opacity group-hover:bg-black/40">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="play_circle" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black/80 to-transparent">
+<p class="text-white text-label-sm font-label-sm truncate">ZEC Live: Mei 2025</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center py-2 pb-safe bg-surface border-t border-outline-variant z-50 shadow-sm">
+<a class="flex flex-col items-center justify-center text-secondary px-4 py-1 hover:text-primary transition-transform scale-95 active:scale-90" href="../nyumbani_home_dashboard/code.html">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Nyumbani</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 transition-transform scale-95 active:scale-90" href="../elimu_voter_education/code.html">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-sm text-label-sm">Habari</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary px-4 py-1 hover:text-primary transition-transform scale-95 active:scale-90" href="../ramani_ya_vituo_polling_stations_refined_search/code.html">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+<span class="font-label-sm text-label-sm">Vituo</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary px-4 py-1 hover:text-primary transition-transform scale-95 active:scale-90" href="../matokeo_ya_uchaguzi_results_dashboard/code.html">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span class="font-label-sm text-label-sm">Matokeo</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for category chips
+        const chips = document.querySelectorAll('section:nth-of-type(2) button');
+        chips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                chips.forEach(c => {
+                    c.classList.remove('bg-primary', 'text-on-primary');
+                    c.classList.add('bg-surface-container', 'text-on-surface-variant', 'border', 'border-outline-variant');
+                });
+                chip.classList.add('bg-primary', 'text-on-primary');
+                chip.classList.remove('bg-surface-container', 'text-on-surface-variant', 'border', 'border-outline-variant');
+            });
+        });
+
+        // Simple scroll reveal simulation
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card-shadow').forEach(card => {
+            card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
+            observer.observe(card);
+        });
+    </script>
+<a href="../msaidizi_zec_bot_assistant/code.html" class="fixed bottom-24 right-4 z-40 flex items-center gap-2 rounded-full bg-primary px-4 py-3 text-on-primary shadow-lg transition-transform active:scale-90">
+    <span class="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
+        <span class="material-symbols-outlined text-[20px]">smart_toy</span>
+    </span>
+    <span class="text-sm font-semibold">ZEC Bot</span>
+</a>
+</body></html>
