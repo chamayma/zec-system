@@ -2,66 +2,65 @@
 
 <html class="light" lang="sw"><head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
-<title>ZEC App - Nyumbani</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ZEC - Digital Voter Education Center</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind Theme Configuration -->
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
             "colors": {
-                    "error-container": "#ffdad6",
-                    "on-secondary-container": "#626262",
-                    "on-primary-fixed-variant": "#474746",
-                    "tertiary-fixed": "#e6e2df",
-                    "surface-dim": "#ddd9d8",
-                    "on-background": "#1c1b1b",
-                    "surface-container-low": "#f7f3f2",
-                    "secondary-container": "#e1dfdf",
-                    "outline": "#747878",
-                    "background": "#fdf8f8",
                     "on-error": "#ffffff",
-                    "on-tertiary-fixed-variant": "#484645",
-                    "inverse-primary": "#c8c6c5",
-                    "on-tertiary-fixed": "#1c1b1a",
-                    "primary-fixed-dim": "#c8c6c5",
-                    "surface-container-high": "#ebe7e6",
-                    "on-tertiary": "#ffffff",
-                    "tertiary-fixed-dim": "#cac6c4",
-                    "inverse-on-surface": "#f4f0ef",
-                    "on-tertiary-container": "#868382",
-                    "on-primary-container": "#858383",
-                    "on-surface-variant": "#444748",
-                    "tertiary": "#000000",
-                    "surface": "#fdf8f8",
-                    "on-error-container": "#93000a",
-                    "outline-variant": "#c4c7c7",
-                    "surface-tint": "#5f5e5e",
+                    "surface-bright": "#f9f9f9",
+                    "on-secondary-fixed-variant": "#474747",
+                    "on-secondary-container": "#656464",
+                    "tertiary-fixed": "#e2e2e2",
                     "on-secondary": "#ffffff",
-                    "secondary-fixed-dim": "#c7c6c6",
-                    "surface-variant": "#e5e2e1",
-                    "on-secondary-fixed-variant": "#464747",
-                    "primary-container": "#1c1b1b",
-                    "surface-container-lowest": "#ffffff",
-                    "error": "#ba1a1a",
-                    "surface-container-highest": "#e5e2e1",
-                    "primary": "#000000",
-                    "surface-container": "#f1edec",
-                    "tertiary-container": "#1c1b1a",
-                    "primary-fixed": "#e5e2e1",
-                    "on-primary-fixed": "#1c1b1b",
-                    "secondary": "#5e5e5e",
-                    "secondary-fixed": "#e4e2e2",
+                    "inverse-on-surface": "#f0f1f1",
+                    "background": "#f9f9f9",
+                    "surface-variant": "#e2e2e2",
+                    "surface": "#f9f9f9",
+                    "on-background": "#1a1c1c",
+                    "secondary-container": "#e4e2e1",
                     "on-primary": "#ffffff",
-                    "on-surface": "#1c1b1b",
-                    "inverse-surface": "#313030",
+                    "surface-container": "#eeeeee",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "primary": "#000000",
+                    "surface-container-high": "#e8e8e8",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#4c4546",
+                    "surface-dim": "#dadada",
+                    "on-error-container": "#93000a",
+                    "primary-fixed-dim": "#c6c6c6",
+                    "on-surface": "#1a1c1c",
+                    "secondary-fixed-dim": "#c8c6c6",
+                    "tertiary-container": "#1a1c1c",
                     "on-secondary-fixed": "#1b1c1c",
-                    "surface-bright": "#fdf8f8"
+                    "secondary": "#5f5e5e",
+                    "surface-container-low": "#f3f3f4",
+                    "primary-fixed": "#e2e2e2",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#000000",
+                    "inverse-primary": "#c6c6c6",
+                    "on-tertiary-container": "#838484",
+                    "inverse-surface": "#2f3131",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#848484",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "outline": "#7e7576",
+                    "primary-container": "#1b1b1b",
+                    "on-primary-fixed": "#1b1b1b",
+                    "surface-tint": "#5e5e5e",
+                    "outline-variant": "#cfc4c5",
+                    "on-primary-fixed-variant": "#474747",
+                    "surface-container-highest": "#e2e2e2",
+                    "secondary-fixed": "#e4e2e1"
             },
             "borderRadius": {
                     "DEFAULT": "0.25rem",
@@ -70,70 +69,40 @@
                     "full": "9999px"
             },
             "spacing": {
-                    "sm": "8px",
-                    "gutter": "16px",
-                    "margin-tablet": "32px",
-                    "xs": "4px",
-                    "md": "16px",
+                    "stack-md": "24px",
                     "base": "4px",
-                    "xl": "32px",
-                    "lg": "24px",
-                    "margin-mobile": "16px"
+                    "stack-sm": "8px",
+                    "gutter": "16px",
+                    "stack-lg": "48px",
+                    "container-padding": "16px"
             },
             "fontFamily": {
-                    "label-lg": ["Inter"],
-                    "body-lg": ["Inter"],
-                    "display-lg-mobile": ["Inter"],
-                    "label-sm": ["Inter"],
-                    "body-md": ["Inter"],
                     "headline-md": ["Inter"],
-                    "headline-sm": ["Inter"],
-                    "display-lg": ["Inter"]
+                    "headline-lg-mobile": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "button": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"]
             },
             "fontSize": {
-                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
-                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                    "display-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}],
-                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
-                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
-                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "button": ["16px", {"lineHeight": "24px", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
             }
           },
         },
       }
     </script>
 <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            -webkit-tap-highlight-color: transparent;
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            display: inline-block;
-            line-height: 1;
-            text-transform: none;
-            letter-spacing: normal;
-            word-wrap: normal;
-            white-space: nowrap;
-            direction: ltr;
-        }
-        .custom-shadow {
-            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
-        }
-        .active-shadow {
-            box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12);
-        }
-        .bento-card {
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .bento-card:active {
-            transform: scale(0.98);
-        }
-        .scroll-hide::-webkit-scrollbar {
-            display: none;
-        }
+        body { font-family: 'Inter', sans-serif; background-color: #f9f9f9; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 <style>
     body {
@@ -141,217 +110,162 @@
     }
   </style>
   </head>
-<body class="bg-surface text-on-surface antialiased">
+<body class="text-on-surface bg-background min-h-screen">
 <!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 flex items-center px-margin-mobile py-sm bg-surface/95 backdrop-blur-md border-b border-outline-variant">
-<div class="flex items-center gap-2 flex-1">
-<div class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm">
-<span class="material-symbols-outlined">account_balance</span>
-</div>
-</div>
-<h1 class="flex-1 text-center text-base font-semibold text-primary">ZEC App</h1>
-<div class="flex-1 flex justify-end">
-<button class="relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors">
-<span class="material-symbols-outlined text-primary">notifications</span>
-<span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 rounded-full bg-red-500"></span>
-</button>
+<header class="fixed top-0 left-0 w-full z-50 flex items-center px-container-padding h-16 bg-surface-container-lowest border-b border-surface-variant shadow-sm transition-colors duration-200 ease-in-out">
+<div class="flex items-center w-full max-w-[800px] mx-auto">
+<a href="../nyumbani_home_dashboard/code.html" class="mr-4 p-2 rounded-full hover:bg-surface-container-low transition-colors duration-200 inline-flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_back">arrow_back</span>
+</a>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Elimu ya Mpiga Kura</h1>
 </div>
 </header>
-<main class="pt-16 pb-28 px-margin-mobile">
-<!-- Hero Banner Section -->
-<section class="mt-4 mb-6">
-<div class="relative overflow-hidden rounded-[24px] h-56 shadow-sm border border-outline-variant bg-surface-container-lowest">
-<div id="hero-slider" class="relative h-full w-full">
-<div class="hero-slide absolute inset-0 transition-opacity duration-500 opacity-100">
-<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=900&q=80')"></div>
-<div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/20"></div>
-<div class="relative z-10 flex h-full flex-col justify-between p-4 text-white">
-<div class="flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 backdrop-blur-sm w-fit">
-<div class="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
-<span class="material-symbols-outlined text-base">account_balance</span>
+<main class="pt-20 pb-24 px-container-padding max-w-[800px] mx-auto min-h-screen">
+<!-- Tab Navigation -->
+<div class="flex space-x-1 mb-8 overflow-x-auto hide-scrollbar sticky top-16 bg-background py-4 z-40">
+<a href="code.html" class="flex-1 py-2 px-6 rounded-full font-label-caps text-label-caps text-on-primary bg-primary transition-all duration-150 inline-flex items-center justify-center" aria-current="page">Katuni</a>
+<a href="video.html" class="flex-1 py-2 px-6 rounded-full font-label-caps text-label-caps text-gray-500 dark:text-gray-400 bg-surface-container-high hover:bg-surface-container-highest transition-all duration-150 inline-flex items-center justify-center">Video</a>
+<a href="faq.html" class="flex-1 py-2 px-6 rounded-full font-label-caps text-label-caps text-gray-500 dark:text-gray-400 bg-surface-container-high hover:bg-surface-container-highest transition-all duration-150 inline-flex items-center justify-center">Maswali</a>
 </div>
-<span class="text-xs font-semibold uppercase tracking-[0.2em]">Nembo ya ZEC</span>
+<!-- Featured Section (Bento style hint) -->
+<div class="mb-stack-md bg-surface-container-lowest border border-surface-variant rounded-xl p-4 shadow-sm flex flex-col md:flex-row gap-4 items-center">
+<div class="w-full md:w-1/3 aspect-video md:aspect-square bg-secondary-container rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist vector illustration of a diverse group of voters standing in an organized queue at a modern Zanzibar electoral station. The style is professional and corporate, using a palette of soft whites, deep blacks, and a single accent of golden yellow to denote focus. The lighting is even and bright, suggesting transparency and order in the democratic process." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARcWerSLm3zkbVmHXpAadk6eWbvtRaJh-alU9qzPpB4vDfaf2mKikriBXge-x5rkoPE9EZGIuBBnPKZQwsLQnDyBDUkiknC8Zm52fm0XZjg_IgiubtJf9yafk9fGTLlM47agRtxL2aYBWHdaK1nXDNaNvTY32ZEqmswgUOh_IQAUgkYcSLdWJJ_C6A2d8QgdfANu4uy7u7yW-1GPOlyDbS6titseoXcqE_GEx1EWnxnPkfHjUSYpBELEvABGMbn37RRHJOg9BEU-QB"/>
 </div>
-<div>
-<p class="mb-1 text-[11px] uppercase tracking-[0.25em] text-white/75">Kauli mbiu ya Tume</p>
-<h2 class="text-xl font-semibold leading-snug">Uwazi, uaminifu na huduma za uchaguzi kwa watu wote</h2>
-</div>
+<div class="flex-1">
+<span class="font-label-caps text-[10px] uppercase tracking-widest text-primary mb-1 block">Toleo la Mwezi Huu</span>
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Mwongozo wa Mpiga Kura 2024</h2>
+<p class="font-body-sm text-body-sm text-secondary mb-4">Jifunze haki zako na wajibu wako kama raia katika mchakato wa kidemokrasia kupitia mfululizo wetu mpya wa katuni.</p>
+<a href="video.html" class="font-button text-button bg-primary text-on-primary px-4 py-2 rounded-lg hover:opacity-90 transition-opacity inline-flex items-center justify-center">Anza Kusoma</a>
 </div>
 </div>
-<div class="hero-slide absolute inset-0 transition-opacity duration-500 opacity-0">
-<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80')"></div>
-<div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/20"></div>
-<div class="relative z-10 flex h-full flex-col justify-between p-4 text-white">
-<div class="flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 backdrop-blur-sm w-fit">
-<div class="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
-<span class="material-symbols-outlined text-base">verified</span>
+<!-- Katuni List -->
+<div class="space-y-4">
+<!-- List Item 1 -->
+<div class="group bg-surface-container-lowest border border-surface-variant rounded-xl p-4 flex items-center shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer">
+<div class="w-16 h-16 md:w-20 md:w-20 bg-surface-container-highest rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" data-alt="A vibrant digital illustration depicting the step-by-step process of casting a ballot into a clear, secure box. The aesthetic is clean and institutional, featuring high-contrast lines and a professional color scheme of black, white, and subtle grey. The atmosphere is informative and calm, designed for an official Zanzibar electoral commission mobile app interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDok1USzwu_4j7T8YObpl71DBJ7k6WKatn81zAhpWaYXTsPZh9-MDlvAG9re5jXeDvrfkocecjpIT2u1NvsGYzmVqBIWnh9F5XpYLCfmNzWV3fkzFAm__avMz23Pcqplwnh62KHlI5a3B2HkAJe9Kh8uvuYSygSPmxnf91xwVzdbvu57GdAK1N17PmpOfTqyAarNMwuLvguzuJZXxb99zQ_I79mj1FLFC50BlduCKdvT5tu08KJ2a86HYOXsAEsD_t-9hW2HUqsa49t"/>
 </div>
-<span class="text-xs font-semibold uppercase tracking-[0.2em]">Taarifa muhimu</span>
+<div class="ml-4 flex-1">
+<h3 class="font-headline-md text-body-lg font-semibold text-on-surface leading-tight">Jinsi ya kupiga kura</h3>
+<p class="font-body-sm text-secondary mt-1">Hatua 5 za kufuata unapofika kituoni.</p>
 </div>
-<div>
-<p class="mb-1 text-[11px] uppercase tracking-[0.25em] text-white/75">Uchaguzi wa Zanzibar</p>
-<h2 class="text-xl font-semibold leading-snug">Taarifa sahihi na za wakati zinapatikana kwa urahisi</h2>
-</div>
-</div>
-</div>
-<div class="hero-slide absolute inset-0 transition-opacity duration-500 opacity-0">
-<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80')"></div>
-<div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/20"></div>
-<div class="relative z-10 flex h-full flex-col justify-between p-4 text-white">
-<div class="flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 backdrop-blur-sm w-fit">
-<div class="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
-<span class="material-symbols-outlined text-base">campaign</span>
-</div>
-<span class="text-xs font-semibold uppercase tracking-[0.2em]">Mabadiliko ya picha</span>
-</div>
-<div>
-<p class="mb-1 text-[11px] uppercase tracking-[0.25em] text-white/75">Mawasiliano ya karibu</p>
-<h2 class="text-xl font-semibold leading-snug">Tumia ZEC App kupokea taarifa na msaada wa haraka</h2>
+<div class="ml-4 flex flex-col items-end">
+<span class="text-label-caps font-label-caps text-secondary mb-1">Katuni #1</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
 </div>
 </div>
+<!-- List Item 2 -->
+<div class="group bg-surface-container-lowest border border-surface-variant rounded-xl p-4 flex items-center shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer">
+<div class="w-16 h-16 md:w-20 md:w-20 bg-surface-container-highest rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" data-alt="A professional corporate-style illustration of a citizen confidently displaying their voter identification card. The background is a clean, neutral white, and the subject is depicted with institutional clarity. The palette consists of monochrome shades with a soft blue accent, reflecting a modern and transparent digital government service aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjOOHztVI_g8Vh7owMJubWfhSLwHq1GZOk4ABQcNSOCgFK7si4VGNdIaGPHg7_nKn2iTpXoWkxf8VbulIKH0yCnBhgpUvnOjzNlDjYwlyjg9EOJpCrijfPM0dostPmBUiqrS4U_Lv5g1ehxzI7mwXN6KAZi2WiQWoq_twe-qU_ibGZi2OmzmWaNTRdtS5xjyx6ZWOmxYjGvtYN6x3y5WLNSzpkpp0OKVx7BRUtfiJJtThH04O_akPzpOEr36-CGHw6sXm-sxpiNBuh"/>
+</div>
+<div class="ml-4 flex-1">
+<h3 class="font-headline-md text-body-lg font-semibold text-on-surface leading-tight">Wajibu wa mpiga kura</h3>
+<p class="font-body-sm text-secondary mt-1">Kwanini kura yako ni muhimu kwa taifa letu.</p>
+</div>
+<div class="ml-4 flex flex-col items-end">
+<span class="text-label-caps font-label-caps text-secondary mb-1">Katuni #2</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
 </div>
 </div>
-<div class="absolute bottom-3 left-1/2 z-20 flex -translate-x-1/2 gap-2">
-<button class="dot h-2.5 w-2.5 rounded-full bg-white/80" data-index="0"></button>
-<button class="dot h-2.5 w-2.5 rounded-full bg-white/40" data-index="1"></button>
-<button class="dot h-2.5 w-2.5 rounded-full bg-white/40" data-index="2"></button>
+<!-- List Item 3 -->
+<div class="group bg-surface-container-lowest border border-surface-variant rounded-xl p-4 flex items-center shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer">
+<div class="w-16 h-16 md:w-20 md:w-20 bg-surface-container-highest rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" data-alt="A minimalist educational graphic showing a clock and a ballot paper, emphasizing timely arrival at voting stations. The design uses bold, dark grey outlines and a pristine white background to maintain a high-end, official institutional feel. The mood is urgent yet organized, consistent with a national civic duty campaign." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW650i2WhRX2Fi4yQHOi5fDlhVsqqQ80oGVuSBkscX7Qm1JAg1ONLed6UY0F3Iglatb1PvH27VtJGcNnesYsUG1xXrSjAf10t95o9JAwlcNYxYOd_vS1gQ5R5H1oTqhUpmCJ7hHEV0N00gbl5RGXTQTWRslW21nivBBglbuZoBHMAs5CZQYGa5DmhUCuqcoCLWKbVp1UvuN9wrdh-3DfrGNOKnyLxhdVs8nZWF-y23ujNG84vOjCFJduiZ2hyljqGNmCuFocQ3m3dD"/>
+</div>
+<div class="ml-4 flex-1">
+<h3 class="font-headline-md text-body-lg font-semibold text-on-surface leading-tight">Mambo ya kuzingatia kwa wapiga kura</h3>
+<p class="font-body-sm text-secondary mt-1">Ratiba na nyaraka muhimu za kubeba.</p>
+</div>
+<div class="ml-4 flex flex-col items-end">
+<span class="text-label-caps font-label-caps text-secondary mb-1">Katuni #3</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
 </div>
 </div>
-<div class="mt-3 rounded-[16px] border border-outline-variant bg-surface-container-lowest p-3 shadow-sm">
-<div class="flex items-center justify-between text-sm text-secondary">
-<span class="flex items-center gap-2"><span class="material-symbols-outlined text-base text-primary">event</span>Uchaguzi Mkuu wa Zanzibar</span>
-<a class="rounded-full bg-red-100 px-2 py-0.5 text-[11px] font-semibold text-red-600 transition-colors hover:bg-red-200" href="../msaidizi_zec_bot_assistant/code.html">Msaada wa papo hapo</a>
+<!-- List Item 4 -->
+<div class="group bg-surface-container-lowest border border-surface-variant rounded-xl p-4 flex items-center shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer">
+<div class="w-16 h-16 md:w-20 md:w-20 bg-surface-container-highest rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" data-alt="A modern vector illustration representing Civil Society Organizations as interconnected nodes and diverse people shaking hands. The style is minimalist and corporate, utilizing a high-contrast palette of black and white with subtle grey shading. The overall atmosphere conveys partnership, transparency, and civic collaboration for a national electoral commission app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGPBi_P9yvxeFyg7Goc856Mxplv5dTx4YnmE8_ZAa85qxabbSU2AARWbGpy8UDHGQBNsR_9LoUFtNBezZF4UNigEohFl8G0o53CXU_4ia_1afx58FdPrAFwz_PNoxzt-jmxralGFM6USaQjzmE-hdM0-un11ZvqWlTcqf3EMrsGa5TBOpRHMULif8VlnQEpPob3sj9elktRKwuiJfNAAhfA-nqK7hgoJtgilHG1HmRK05P1cBKvmDtctBI16H7iP6bKlB9YJCgdQza"/>
+</div>
+<div class="ml-4 flex-1">
+<h3 class="font-headline-md text-body-lg font-semibold text-on-surface leading-tight">Nafasi ya Asasi za Kiraia katika uchaguzi</h3>
+<p class="font-body-sm text-secondary mt-1">Ushiriki wa mashirika katika kuhamasisha amani.</p>
+</div>
+<div class="ml-4 flex flex-col items-end">
+<span class="text-label-caps font-label-caps text-secondary mb-1">Katuni #4</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
 </div>
 </div>
-</section>
-<p class="mb-6 text-center text-sm text-secondary">Kumuwezesha mwananchi kupata huduma zote za uchaguzi kwa urahisi, uwazi na kwa wakati</p>
-<!-- Quick Actions Grid (2x3) -->
-<section class="mb-6">
-<h3 class="mb-3 px-1 text-sm font-semibold text-on-surface-variant">Huduma za Haraka</h3>
-<div class="grid grid-cols-2 gap-3">
-<button class="bento-card rounded-[18px] border border-outline-variant bg-surface-container-lowest p-3 text-center shadow-sm">
-<div class="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-secondary-container">
-<span class="material-symbols-outlined text-primary">location_on</span>
+<!-- List Item 5 -->
+<div class="group bg-surface-container-lowest border border-surface-variant rounded-xl p-4 flex items-center shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer">
+<div class="w-16 h-16 md:w-20 md:w-20 bg-surface-container-highest rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" data-alt="A cautious, instructive illustration showing a ballot paper with incorrect markings and a warning sign. The design uses a clean, white background and stark black silhouettes for clarity. A single red accent is used for the warning to indicate importance. The aesthetic is strictly institutional and high-utility to ensure clear voter education." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd4f09a37IaUp7ZQ6jjcVdxc8Q4hxHjNDePcgHXxehSw341l4jOM9mfKek1dGtaR5KENZ4QjGZtigJs8lemkfe1AKVWD0UFG77movM8bAIDhJhnYL5Tg39-oEvC5dKAiDskhDzMlKIdhZ-XIWOIOeqV0dHmcRQ2O4Vij_Aw9M-IUQnAcPsFyUqWEQvRh5xmlpW7U4cPLulzwC6eYMUM24nyGl4reqCjkNstWnH_xYUrVizauff5V6AQJOr_vgCXrvhzqlVeA6ZzgW2"/>
 </div>
-<span class="text-sm font-medium text-on-surface">Tafuta Kituo Chako</span>
-</button>
-<button class="bento-card rounded-[18px] border border-outline-variant bg-surface-container-lowest p-3 text-center shadow-sm">
-<div class="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-secondary-container">
-<span class="material-symbols-outlined text-primary">person_search</span>
+<div class="ml-4 flex-1">
+<h3 class="font-headline-md text-body-lg font-semibold text-on-surface leading-tight">Makosa yanayoweza kuharibu kura</h3>
+<p class="font-body-sm text-secondary mt-1">Jinsi ya kuhakikisha kura yako inahesabiwa.</p>
 </div>
-<span class="text-sm font-medium text-on-surface">Hakiki Taarifa za Mpiga Kura</span>
-</button>
-<button class="bento-card rounded-[18px] border border-outline-variant bg-surface-container-lowest p-3 text-center shadow-sm">
-<div class="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-secondary-container">
-<span class="material-symbols-outlined text-primary">calendar_month</span>
-</div>
-<span class="text-sm font-medium text-on-surface">Ratiba ya Uchaguzi</span>
-</button>
-<button class="bento-card rounded-[18px] border border-outline-variant bg-surface-container-lowest p-3 text-center shadow-sm">
-<div class="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-secondary-container">
-<span class="material-symbols-outlined text-primary">article</span>
-</div>
-<span class="text-sm font-medium text-on-surface">Habari za Tume</span>
-</button>
-<button class="bento-card rounded-[18px] border border-outline-variant bg-surface-container-lowest p-3 text-center shadow-sm">
-<div class="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-secondary-container">
-<span class="material-symbols-outlined text-primary">school</span>
-</div>
-<span class="text-sm font-medium text-on-surface">Elimu ya Mpiga Kura</span>
-</button>
-<button class="bento-card rounded-[18px] border border-outline-variant bg-surface-container-lowest p-3 text-center shadow-sm">
-<div class="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-secondary-container">
-<span class="material-symbols-outlined text-primary">bar_chart</span>
-</div>
-<span class="text-sm font-medium text-on-surface">Matokeo ya Uchaguzi</span>
-</button>
-</div>
-</section>
-<!-- News Section -->
-<section class="mb-6">
-<div class="mb-3 flex items-center justify-between px-1">
-<h3 class="text-sm font-semibold text-on-surface-variant">Habari za Tume</h3>
-<a class="text-sm font-medium text-primary" href="../habari_na_vyombo_vya_habari_news_media/code.html">Angalia Zote</a>
-</div>
-<div class="flex gap-3 overflow-x-auto pb-2 scroll-hide">
-<div class="min-w-[240px] rounded-[18px] border border-outline-variant bg-surface-container-lowest p-2 shadow-sm">
-<div class="mb-2 h-24 rounded-[14px] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=800&q=80')"></div>
-<p class="mb-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-secondary">ZEC News</p>
-<h4 class="text-sm font-semibold text-on-surface">ZEC yatangaza tarehe za uandikishaji wa daftari la kudumu.</h4>
-<p class="mt-2 text-[11px] text-secondary">Mei 14, 2024</p>
-</div>
-<div class="min-w-[240px] rounded-[18px] border border-outline-variant bg-surface-container-lowest p-2 shadow-sm">
-<div class="mb-2 h-24 rounded-[14px] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80')"></div>
-<p class="mb-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-secondary">ZEC News</p>
-<h4 class="text-sm font-semibold text-on-surface">Mafunzo kwa wasimamizi wa vituo vya kupigia kura yaanza rasmi.</h4>
-<p class="mt-2 text-[11px] text-secondary">Mei 12, 2024</p>
+<div class="ml-4 flex flex-col items-end">
+<span class="text-label-caps font-label-caps text-error mb-1">Muhimu</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
 </div>
 </div>
-</section>
+</div>
+<!-- Pagination/Footer Hint -->
+<div class="mt-stack-lg text-center pb-10">
+<p class="font-body-sm text-secondary">Unaangalia toleo la hivi punde la katuni za elimu ya mpiga kura.</p>
+</div>
 </main>
-<!-- ZEC Bot Floating Button -->
 <a href="../msaidizi_zec_bot_assistant/code.html" class="fixed bottom-24 right-4 z-40 flex items-center gap-2 rounded-full bg-primary px-4 py-3 text-on-primary shadow-lg transition-transform active:scale-90">
-<span class="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
-<span class="material-symbols-outlined text-[20px]">smart_toy</span>
-</span>
-<span class="text-sm font-semibold">ZEC Bot</span>
+    <span class="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
+        <span class="material-symbols-outlined text-[20px]">smart_toy</span>
+    </span>
+    <span class="text-sm font-semibold">ZEC Bot</span>
 </a>
 <!-- BottomNavBar -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-xs py-base pb-safe bg-surface border-t border-outline-variant shadow-sm">
-<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-3 py-1 scale-95 transition-transform duration-100" href="../index.html">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
-<span class="font-label-sm text-label-sm">Nyumbani</span>
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 bg-surface-container-lowest border-t border-surface-variant shadow-lg transition-transform duration-150">
+<a class="flex flex-col items-center justify-center text-secondary px-3 py-1 hover:bg-surface-container-high rounded-xl transition-colors" href="../index.html">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-caps text-label-caps mt-1">Nyumbani</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container transition-colors" href="../elimu_voter_education/code.html">
-<span class="material-symbols-outlined">school</span>
-<span class="font-label-sm text-label-sm">Elimu</span>
+<a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-xl px-3 py-1 transition-colors" href="../elimu_voter_education/code.html" aria-current="page">
+<span class="material-symbols-outlined" data-icon="school" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="font-label-caps text-[10px] mt-1 font-bold">Elimu</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container transition-colors" href="../ramani_ya_vituo_polling_stations_refined_search/code.html">
-<span class="material-symbols-outlined">location_on</span>
-<span class="font-label-sm text-label-sm">Vituo</span>
+<a class="flex flex-col items-center justify-center text-secondary px-3 py-1 hover:bg-surface-container-high rounded-xl transition-colors" href="../ramani_ya_vituo_polling_stations_refined_search/code.html">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+<span class="font-label-caps text-label-caps mt-1">Vituo</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container transition-colors" href="../mawasiliano_refined_home_button_transition/code.html">
-<span class="material-symbols-outlined">contact_support</span>
-<span class="font-label-sm text-label-sm">Mawasiliano</span>
+<a class="flex flex-col items-center justify-center text-secondary px-3 py-1 hover:bg-surface-container-high rounded-xl transition-colors" href="../mawasiliano_refined_home_button_transition/code.html">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-caps text-label-caps mt-1">Mawasiliano</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:bg-surface-container transition-colors" href="../zaidi_more_menu/code.html">
-<span class="material-symbols-outlined">menu</span>
-<span class="font-label-sm text-label-sm">Zaidi</span>
+<a class="flex flex-col items-center justify-center text-secondary px-3 py-1 hover:bg-surface-container-high rounded-xl transition-colors" href="../zaidi_more_menu/code.html">
+<span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span>
+<span class="font-label-caps text-label-caps mt-1">Zaidi</span>
 </a>
 </nav>
 <script>
-        const slides = Array.from(document.querySelectorAll('.hero-slide'));
-        const dots = Array.from(document.querySelectorAll('.dot'));
-        let activeSlide = 0;
-
-        function showSlide(index) {
-            slides.forEach((slide, slideIndex) => {
-                slide.classList.toggle('opacity-100', slideIndex === index);
-                slide.classList.toggle('opacity-0', slideIndex !== index);
+        // Simple Micro-interaction for tabs
+        const tabs = document.querySelectorAll('button.flex-1');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => {
+                    t.classList.remove('bg-primary', 'text-on-primary');
+                    t.classList.add('bg-surface-container-high', 'text-secondary');
+                });
+                tab.classList.remove('bg-surface-container-high', 'text-secondary');
+                tab.classList.add('bg-primary', 'text-on-primary');
             });
-            dots.forEach((dot, dotIndex) => {
-                dot.classList.toggle('bg-white/80', dotIndex === index);
-                dot.classList.toggle('bg-white/40', dotIndex !== index);
-            });
-            activeSlide = index;
-        }
-
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => showSlide(parseInt(dot.dataset.index)));
         });
 
+        // Pulse effect for the 'Important' item
         setInterval(() => {
-            const next = (activeSlide + 1) % slides.length;
-            showSlide(next);
-        }, 5000);
-
-        document.querySelectorAll('.bento-card').forEach(card => {
-            card.addEventListener('click', function() {
-                this.classList.add('scale-95');
-                setTimeout(() => {
-                    this.classList.remove('scale-95');
-                }, 150);
-            });
-        });
+            const importantTag = document.querySelector('.text-error');
+            if (importantTag) {
+                importantTag.style.opacity = importantTag.style.opacity === '0.6' ? '1' : '0.6';
+            }
+        }, 1000);
     </script>
 </body></html>
